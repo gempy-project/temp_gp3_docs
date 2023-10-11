@@ -248,7 +248,7 @@ Add topography
     gp.set_topography_from_random(
         grid=geo_model.grid,
         fractal_dimension=1.2,
-        d_z=np.array([600, 2000]),
+        d_z=np.array([300, 750]),
         topography_resolution=np.array([50, 50])
     )
 
@@ -262,7 +262,7 @@ Add topography
 
     Active grids: ['topography' 'sections']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7fb1a5d28910>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7f54fc70f910>
 
 
 
@@ -310,7 +310,7 @@ Active grids:
  .. code-block:: none
 
 
-    <function plot_section_traces at 0x7fb1eee8be20>
+    <function plot_section_traces at 0x7f54efaec4c0>
 
 
 
@@ -330,8 +330,12 @@ Active grids:
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    A size: (10, 10)
+    CG iterations: 10
+    A size: (58, 58)
+    CG iterations: 100
 
 
 
@@ -358,7 +362,7 @@ Active grids:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fb1a5d521a0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f54a4953fd0>
 
 
 
@@ -384,7 +388,7 @@ Active grids:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fb1a28ffac0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f54a49f2590>
 
 
 
@@ -416,14 +420,14 @@ Active grids:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fb1a28fc250>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f54a4953fd0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.863 seconds)
+   **Total running time of the script:** ( 0 minutes  2.418 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_3b_cross_sections.py:
