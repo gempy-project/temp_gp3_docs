@@ -23,7 +23,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-8
 
-.. code-block:: python3
+.. code-block:: Python
 
     # sphinx_gallery_thumbnail_number = 2
 
@@ -40,7 +40,7 @@ Importing gempy
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-19
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -65,7 +65,7 @@ zone with onlap relationships.
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-38
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     data_path = os.path.abspath('../../')
@@ -93,13 +93,13 @@ zone with onlap relationships.
 
     Active grids: ['topography']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7f44f09f2d10>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7f08f50fe800>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-41
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model)
 
@@ -117,7 +117,7 @@ zone with onlap relationships.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f09f2a70>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f51fa140>
 
 
 
@@ -127,7 +127,7 @@ Raw structural frame
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-47
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.structural_frame
 
@@ -191,7 +191,7 @@ Raw structural frame
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-89
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.transform.apply_anisotropy(gp.data.GlobalAnisotropy.NONE)
     gp.add_structural_group(
@@ -315,7 +315,7 @@ Raw structural frame
 
 .. GENERATED FROM PYTHON SOURCE LINES 90-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     s = gp.compute_model(geo_model)
 
@@ -328,7 +328,7 @@ Raw structural frame
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -336,7 +336,7 @@ Raw structural frame
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-103
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, show_data=True)
     gpv.plot_3d(
@@ -367,13 +367,13 @@ Raw structural frame
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f09f15d0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f51f82b0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 104-132
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(
         model=geo_model,
@@ -443,13 +443,13 @@ Raw structural frame
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f0964cd0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f567fb50>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 133-160
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(
         model=geo_model,
@@ -518,14 +518,14 @@ Raw structural frame
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ee2606a0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac62fa90>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.571 seconds)
+   **Total running time of the script:** (0 minutes 7.243 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_4_onlap_relations.py:
@@ -534,16 +534,13 @@ Raw structural frame
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch1_4_onlap_relations.ipynb <ch1_4_onlap_relations.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch1_4_onlap_relations.py <ch1_4_onlap_relations.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch1_4_onlap_relations.ipynb <ch1_4_onlap_relations.ipynb>`
 
 
 .. only:: html

@@ -48,6 +48,7 @@
       ~InterpolationOptions.number_octree_levels
       ~InterpolationOptions.number_octree_levels_surface
       ~InterpolationOptions.range
+      ~InterpolationOptions.sigmoid_slope
       ~InterpolationOptions.uni_degree
    
    

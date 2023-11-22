@@ -23,7 +23,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 5-14
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     import numpy as np
@@ -53,7 +53,7 @@ interpolator.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid = Grid()
 
@@ -79,7 +79,7 @@ a **composition** relation with Grid:
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-41
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values, grid.values_r
 
@@ -105,7 +105,7 @@ other grid packages (like `Discretize <https://pypi.org/project/discretize/>`_) 
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-50
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.grid_types
 
@@ -131,7 +131,7 @@ methods to manipulate them depending on the type of grid.
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-58
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.regular_grid.values
 
@@ -156,7 +156,7 @@ interpolated and therefore will live on ``Grid().values``) by:
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-66
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.active_grids_bool
 
@@ -181,7 +181,7 @@ grid is still empty ``Grid().values`` is empty too.
 
 .. GENERATED FROM PYTHON SOURCE LINES 72-74
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values
 
@@ -205,7 +205,7 @@ The last important attribute of Grid is the length:
 
 .. GENERATED FROM PYTHON SOURCE LINES 79-81
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.length
 
@@ -233,7 +233,7 @@ name:
 
 .. GENERATED FROM PYTHON SOURCE LINES 90-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.get_grid_args('topography')
 
@@ -267,7 +267,7 @@ activate them.
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-109
 
-.. code-block:: python3
+.. code-block:: Python
 
     help(grid.create_regular_grid)
 
@@ -296,7 +296,7 @@ activate them.
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-112
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.create_regular_grid(extent=[0, 100, 0, 100, -100, 0], resolution=[20, 20, 20])
 
@@ -309,7 +309,7 @@ activate them.
  .. code-block:: none
 
 
-    <gempy.core.data.grid_modules.grid_types.RegularGrid object at 0x7f15b305d450>
+    <gempy.core.data.grid_modules.grid_types.RegularGrid object at 0x7f088aa13160>
 
 
 
@@ -320,7 +320,7 @@ Now the regular grid object composed on ``Grid`` has been filled:
 
 .. GENERATED FROM PYTHON SOURCE LINES 117-119
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.regular_grid.values
 
@@ -351,7 +351,7 @@ case):
 
 .. GENERATED FROM PYTHON SOURCE LINES 125-127
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.active_grids_bool
 
@@ -375,7 +375,7 @@ Therefore the grid values will be equal to the regular grid:
 
 .. GENERATED FROM PYTHON SOURCE LINES 132-134
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values
 
@@ -405,7 +405,7 @@ And the indices to extract the different arrays:
 
 .. GENERATED FROM PYTHON SOURCE LINES 139-141
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.length
 
@@ -432,7 +432,7 @@ Completely free XYZ values.
 
 .. GENERATED FROM PYTHON SOURCE LINES 149-151
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_custom_grid(grid, np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
@@ -446,7 +446,7 @@ Completely free XYZ values.
 
     Active grids: ['regular' 'custom']
 
-    <gempy.core.data.grid_modules.grid_types.CustomGrid object at 0x7f15b3040820>
+    <gempy.core.data.grid_modules.grid_types.CustomGrid object at 0x7f088aa10790>
 
 
 
@@ -458,7 +458,7 @@ compose object will contain values:
 
 .. GENERATED FROM PYTHON SOURCE LINES 157-159
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.custom_grid.values
 
@@ -484,7 +484,7 @@ and since it is active, will be added to the grid.values stack:
 
 .. GENERATED FROM PYTHON SOURCE LINES 164-166
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.active_grids_bool
 
@@ -503,7 +503,7 @@ and since it is active, will be added to the grid.values stack:
 
 .. GENERATED FROM PYTHON SOURCE LINES 167-169
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values.shape
 
@@ -528,7 +528,7 @@ slicing args:
 
 .. GENERATED FROM PYTHON SOURCE LINES 175-177
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.get_grid('custom')
 
@@ -547,7 +547,7 @@ slicing args:
 
 .. GENERATED FROM PYTHON SOURCE LINES 178-181
 
-.. code-block:: python3
+.. code-block:: Python
 
     l0, l1 = grid.get_grid_args('custom')
     l0, l1
@@ -567,7 +567,7 @@ slicing args:
 
 .. GENERATED FROM PYTHON SOURCE LINES 182-184
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values[l0:l1]
 
@@ -596,7 +596,7 @@ dealing with raster data. By default we will create a random topography:
 
 .. GENERATED FROM PYTHON SOURCE LINES 194-196
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_topography_from_random(grid)
 
@@ -611,13 +611,13 @@ dealing with raster data. By default we will create a random topography:
     [-20.   0.]
     Active grids: ['regular' 'custom' 'topography']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7f15bc08be20>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7f088aa11d50>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 197-199
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.active_grids_bool
 
@@ -641,7 +641,7 @@ Now the grid values will contain both the regular grid and topography:
 
 .. GENERATED FROM PYTHON SOURCE LINES 204-206
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values, grid.length
 
@@ -671,7 +671,7 @@ The topography args are got as follows:
 
 .. GENERATED FROM PYTHON SOURCE LINES 211-214
 
-.. code-block:: python3
+.. code-block:: Python
 
     l0, l1 = grid.get_grid_args('topography')
     l0, l1
@@ -696,7 +696,7 @@ And we can slice the values array as any other numpy array:
 
 .. GENERATED FROM PYTHON SOURCE LINES 219-221
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values[l0: l1]
 
@@ -720,7 +720,7 @@ We can compare it to the topography.values:
 
 .. GENERATED FROM PYTHON SOURCE LINES 226-228
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.topography.values
 
@@ -751,7 +751,7 @@ of them in real time:
 
 .. GENERATED FROM PYTHON SOURCE LINES 234-237
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.set_inactive('topography')
     grid.set_inactive('regular')
@@ -776,7 +776,7 @@ Since now all grids are deactivated the values will be empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 242-244
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values
 
@@ -797,7 +797,7 @@ Since now all grids are deactivated the values will be empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 245-247
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.set_active('topography')
 
@@ -816,7 +816,7 @@ Since now all grids are deactivated the values will be empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 248-250
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values, grid.values.shape
 
@@ -841,7 +841,7 @@ Since now all grids are deactivated the values will be empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 251-253
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.set_active('regular')
 
@@ -860,7 +860,7 @@ Since now all grids are deactivated the values will be empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 254-256
 
-.. code-block:: python3
+.. code-block:: Python
 
     grid.values
 
@@ -897,7 +897,7 @@ decreases with distance (e.g. gravity: Check `tutorial 2.2-Cell-selection <https
 
 .. GENERATED FROM PYTHON SOURCE LINES 268-275
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_centered_grid(
         grid,
@@ -948,7 +948,7 @@ dots):
 
 .. GENERATED FROM PYTHON SOURCE LINES 282-311
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     fig = plt.figure()
@@ -1002,7 +1002,7 @@ This grid type has its own tutorial. See :doc: `ch1_3b_cross_sections`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.128 seconds)
+   **Total running time of the script:** (0 minutes 0.078 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_3a_grids.py:
@@ -1011,16 +1011,13 @@ This grid type has its own tutorial. See :doc: `ch1_3b_cross_sections`
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch1_3a_grids.ipynb <ch1_3a_grids.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch1_3a_grids.py <ch1_3a_grids.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch1_3a_grids.ipynb <ch1_3a_grids.ipynb>`
 
 
 .. only:: html

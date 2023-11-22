@@ -23,7 +23,7 @@ Greenstone.
 
 .. GENERATED FROM PYTHON SOURCE LINES 5-13
 
-.. code-block:: python3
+.. code-block:: Python
 
     import os
 
@@ -48,7 +48,7 @@ Greenstone.
 
 .. GENERATED FROM PYTHON SOURCE LINES 14-33
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     data_path = os.path.abspath('../../data/input_data/tut_SandStone')
@@ -78,7 +78,7 @@ Greenstone.
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-36
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, direction=['z'])
 
@@ -96,13 +96,13 @@ Greenstone.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f66e29f97e0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac509e40>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-46
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_model,
@@ -188,7 +188,7 @@ Greenstone.
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-49
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(geo_model)
 
@@ -203,12 +203,6 @@ Greenstone.
     Setting Backend To: AvailableBackends.numpy
     /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
-    A size: (107, 107)
-    CG iterations: 100
-    A size: (33, 33)
-    CG iterations: 64
-    A size: (58, 58)
-    CG iterations: 100
 
 
 .. raw:: html
@@ -221,7 +215,7 @@ Greenstone.
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-52
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[-1], direction=['z'], show_data=False)
 
@@ -239,13 +233,13 @@ Greenstone.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f6721747df0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac453580>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-55
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[25], direction='x')
 
@@ -263,7 +257,7 @@ Greenstone.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f66df2707f0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac450610>
 
 
 
@@ -273,7 +267,7 @@ sphinx_gallery_thumbnail_number = -1
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-58
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model)
 
@@ -290,14 +284,14 @@ sphinx_gallery_thumbnail_number = -1
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f66e29f9750>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08ac657850>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.930 seconds)
+   **Total running time of the script:** (0 minutes 8.624 seconds)
 
 
 .. _sphx_glr_download_examples_real_Greenstone.py:
@@ -306,16 +300,13 @@ sphinx_gallery_thumbnail_number = -1
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: Greenstone.ipynb <Greenstone.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: Greenstone.py <Greenstone.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: Greenstone.ipynb <Greenstone.ipynb>`
 
 
 .. only:: html

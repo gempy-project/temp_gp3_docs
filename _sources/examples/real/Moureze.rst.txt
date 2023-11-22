@@ -23,7 +23,7 @@ Moureze
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-8
 
-.. code-block:: python3
+.. code-block:: Python
 
     import os
 
@@ -40,7 +40,7 @@ These two lines are necessary only if gempy is not installed
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-21
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Importing gempy
@@ -71,7 +71,7 @@ we can directly tidy the data in gempy style:
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-51
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     data_path = os.path.abspath('../../data/input_data/Moureze')
@@ -108,11 +108,11 @@ Extracting the orientatins:
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-60
 
-.. code-block:: python3
+.. code-block:: Python
 
     mask_surfpoints = Moureze_points['G_x'] < -9999
-    surface_points = Moureze_points[mask_surfpoints]
-    orientations = Moureze_points[~mask_surfpoints]
+    surface_points = Moureze_points[mask_surfpoints][::10]
+    orientations = Moureze_points[~mask_surfpoints][::10]
 
 
 
@@ -128,7 +128,7 @@ Giving an arbitrary value name to the surface
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-68
 
-.. code-block:: python3
+.. code-block:: Python
 
     surface_points['surface'] = '0'
     orientations['surface'] = '0'
@@ -137,29 +137,12 @@ Giving an arbitrary value name to the surface
 
 
 
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    /home/leguark/gempy/examples/examples/real/Moureze.py:65: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      surface_points['surface'] = '0'
-    /home/leguark/gempy/examples/examples/real/Moureze.py:66: SettingWithCopyWarning: 
-    A value is trying to be set on a copy of a slice from a DataFrame.
-    Try using .loc[row_indexer,col_indexer] = value instead
-
-    See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-      orientations['surface'] = '0'
-
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 69-71
 
-.. code-block:: python3
+.. code-block:: Python
 
     surface_points.tail()
 
@@ -201,58 +184,58 @@ Giving an arbitrary value name to the surface
       </thead>
       <tbody>
         <tr>
-          <th>3425</th>
-          <td>177.428558</td>
-          <td>155.904465</td>
-          <td>-152.007</td>
+          <th>3370</th>
+          <td>224.000000</td>
+          <td>65.335228</td>
+          <td>-120.0000</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
-          <td>0.045217</td>
+          <td>0.670953</td>
           <td>0</td>
         </tr>
         <tr>
-          <th>3426</th>
-          <td>89.924927</td>
-          <td>86.352005</td>
-          <td>-120.026</td>
+          <th>3386</th>
+          <td>232.000000</td>
+          <td>20.000000</td>
+          <td>-85.1014</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
-          <td>0.067264</td>
+          <td>0.700194</td>
           <td>0</td>
         </tr>
         <tr>
-          <th>3427</th>
-          <td>75.935799</td>
-          <td>116.717010</td>
-          <td>-140.023</td>
+          <th>3396</th>
+          <td>135.939468</td>
+          <td>154.308319</td>
+          <td>-154.0210</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
-          <td>0.783988</td>
+          <td>0.351625</td>
           <td>0</td>
         </tr>
         <tr>
-          <th>3428</th>
-          <td>177.964096</td>
-          <td>233.829971</td>
-          <td>-148.831</td>
+          <th>3411</th>
+          <td>296.000000</td>
+          <td>378.000000</td>
+          <td>-156.4050</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
-          <td>0.523201</td>
+          <td>0.852947</td>
           <td>0</td>
         </tr>
         <tr>
-          <th>3429</th>
-          <td>46.487995</td>
-          <td>17.739241</td>
-          <td>-148.019</td>
+          <th>3424</th>
+          <td>91.960609</td>
+          <td>151.813431</td>
+          <td>-83.2593</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
           <td>-99999.0</td>
-          <td>0.110549</td>
+          <td>0.950689</td>
           <td>0</td>
         </tr>
       </tbody>
@@ -264,7 +247,7 @@ Giving an arbitrary value name to the surface
 
 .. GENERATED FROM PYTHON SOURCE LINES 72-74
 
-.. code-block:: python3
+.. code-block:: Python
 
     orientations.tail()
 
@@ -306,6 +289,50 @@ Giving an arbitrary value name to the surface
       </thead>
       <tbody>
         <tr>
+          <th>3186</th>
+          <td>139.936676</td>
+          <td>207.712677</td>
+          <td>-154.766</td>
+          <td>-0.034360</td>
+          <td>0.068784</td>
+          <td>0.997040</td>
+          <td>0.050783</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>3254</th>
+          <td>109.926086</td>
+          <td>47.649914</td>
+          <td>-135.337</td>
+          <td>0.351890</td>
+          <td>-0.766284</td>
+          <td>-0.537571</td>
+          <td>0.942560</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>3315</th>
+          <td>158.341888</td>
+          <td>211.320877</td>
+          <td>-147.312</td>
+          <td>0.053863</td>
+          <td>0.143364</td>
+          <td>0.988203</td>
+          <td>0.053091</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <th>3371</th>
+          <td>0.734351</td>
+          <td>90.000000</td>
+          <td>-100.000</td>
+          <td>0.756724</td>
+          <td>0.533905</td>
+          <td>0.377245</td>
+          <td>0.170960</td>
+          <td>0</td>
+        </tr>
+        <tr>
           <th>3409</th>
           <td>47.970890</td>
           <td>129.885971</td>
@@ -314,50 +341,6 @@ Giving an arbitrary value name to the surface
           <td>-0.849487</td>
           <td>0.269609</td>
           <td>0.016933</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>3420</th>
-          <td>175.944580</td>
-          <td>293.731140</td>
-          <td>-138.019</td>
-          <td>0.217228</td>
-          <td>-0.884429</td>
-          <td>0.413035</td>
-          <td>0.444558</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>3421</th>
-          <td>203.969635</td>
-          <td>367.725098</td>
-          <td>-150.011</td>
-          <td>0.217373</td>
-          <td>-0.971044</td>
-          <td>-0.099104</td>
-          <td>0.708855</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>3422</th>
-          <td>133.925903</td>
-          <td>225.623962</td>
-          <td>-146.756</td>
-          <td>0.318182</td>
-          <td>-0.872684</td>
-          <td>-0.370381</td>
-          <td>0.126039</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <th>3430</th>
-          <td>290.000000</td>
-          <td>180.000000</td>
-          <td>-103.539</td>
-          <td>0.126294</td>
-          <td>-0.192654</td>
-          <td>0.973105</td>
-          <td>0.679096</td>
           <td>0</td>
         </tr>
       </tbody>
@@ -393,7 +376,7 @@ Number voxels
 
 .. GENERATED FROM PYTHON SOURCE LINES 95-97
 
-.. code-block:: python3
+.. code-block:: Python
 
     np.array([156, 206, 76]).prod()
 
@@ -412,7 +395,7 @@ Number voxels
 
 .. GENERATED FROM PYTHON SOURCE LINES 98-134
 
-.. code-block:: python3
+.. code-block:: Python
 
     resolution_requ = [156, 206, 76]
     resolution = [77, 103, 38]
@@ -446,7 +429,7 @@ Number voxels
         project_name='Moureze',
         extent=[-5, 305, -5, 405, -200, -50],
         resolution=resolution_low,
-        refinement=1,
+        refinement=5,
         structural_frame=structural_frame
     )
 
@@ -464,7 +447,7 @@ Now we can see how the data looks so far:
 
 .. GENERATED FROM PYTHON SOURCE LINES 139-142
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, direction='y')
 
@@ -483,7 +466,7 @@ Now we can see how the data looks so far:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549ebe4a00>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7ff62bf41cf0>
 
 
 
@@ -496,7 +479,7 @@ that value:
 
 .. GENERATED FROM PYTHON SOURCE LINES 149-150
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.interpolation_options.kernel_options.range *= 0.2
 
@@ -506,13 +489,17 @@ that value:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-157
+.. GENERATED FROM PYTHON SOURCE LINES 151-161
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(
         gempy_model=geo_model,
-        engine_config=gp.data.GemPyEngineConfig(use_gpu=True, dtype='float64', backend=AvailableBackends.numpy)
+        engine_config=gp.data.GemPyEngineConfig(
+            use_gpu=False, 
+            dtype='float32',
+            backend=AvailableBackends.PYTORCH
+        )
     )
 
 
@@ -524,22 +511,23 @@ that value:
 
  .. code-block:: none
 
-    Setting Backend To: AvailableBackends.numpy
-    A size: (4783, 4783)
-    CG iterations: 100
-    /home/leguark/gempy_engine/gempy_engine/API/dual_contouring/multi_scalar_dual_contouring.py:48: UserWarning: Fancy triangulation only works with regular grid of resolution [2,2,2]. Defaulting to regular triangulation
-      warnings.warn("Fancy triangulation only works with regular grid of resolution [2,2,2]. Defaulting to regular triangulation")
+    Setting Backend To: AvailableBackends.PYTORCH
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
+      warnings.warn(
+    Condition number: 35643652.0.
+    /home/leguark/gempy_engine/gempy_engine/core/backend_tensor.py:171: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+      return torch.tensor(array_like, dtype=dtype)
 
 
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <b>Solutions:</b> 1 Octree Levels, 1 DualContouringMeshes
+    <b>Solutions:</b> 5 Octree Levels, 1 DualContouringMeshes
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-183
+.. GENERATED FROM PYTHON SOURCE LINES 162-187
 
 Time
 ~~~~
@@ -567,9 +555,9 @@ Time
    loop each)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-187
+.. GENERATED FROM PYTHON SOURCE LINES 189-191
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     gpv.plot_2d(geo_model, cell_number='mid', series_n=0, show_scalar=True)
@@ -587,13 +575,13 @@ Time
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549ed93ca0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7ff57ae95b10>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-190
+.. GENERATED FROM PYTHON SOURCE LINES 192-194
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number='mid', show_data=True, direction='y')
 
@@ -611,17 +599,17 @@ Time
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549ef8d7b0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7ff57ae959f0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-192
+.. GENERATED FROM PYTHON SOURCE LINES 195-196
 
 sphinx_gallery_thumbnail_number = 4
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-193
+.. GENERATED FROM PYTHON SOURCE LINES 196-197
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model)
 
@@ -638,14 +626,14 @@ sphinx_gallery_thumbnail_number = 4
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f549e6da320>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7ff57ae97cd0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.252 seconds)
+   **Total running time of the script:** (0 minutes 5.789 seconds)
 
 
 .. _sphx_glr_download_examples_real_Moureze.py:
@@ -654,16 +642,13 @@ sphinx_gallery_thumbnail_number = 4
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: Moureze.ipynb <Moureze.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: Moureze.py <Moureze.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: Moureze.ipynb <Moureze.ipynb>`
 
 
 .. only:: html

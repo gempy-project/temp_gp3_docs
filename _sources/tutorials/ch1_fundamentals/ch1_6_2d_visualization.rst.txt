@@ -23,7 +23,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-21
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     import os
@@ -58,7 +58,7 @@ Data Preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-43
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = os.path.abspath('../../')
 
@@ -85,13 +85,13 @@ Data Preparation
 
     Active grids: ['topography']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7f44f0802290>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7f08f5695540>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 44-46
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data)
 
@@ -109,13 +109,13 @@ Data Preparation
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f08033a0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f5695240>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-51
 
-.. code-block:: python3
+.. code-block:: Python
 
     section_dict = {'section1': ([0, 0], [1000, 1000], [100, 80]),
                     'section2': ([800, 0], [800, 1000], [150, 100]),
@@ -130,7 +130,7 @@ Data Preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-55
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_section_grid(geo_data.grid, section_dict)
     gpv.plot_section_traces(geo_data)
@@ -150,13 +150,13 @@ Data Preparation
 
     Active grids: ['topography' 'sections']
 
-    <function plot_section_traces at 0x7f4539be7130>
+    <function plot_section_traces at 0x7f08fe6e30a0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-58
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_data.grid.sections
 
@@ -208,7 +208,7 @@ Data Preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 61-74
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_data,
@@ -280,7 +280,7 @@ Data Preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-77
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_data.grid.active_grids
 
@@ -299,7 +299,7 @@ Data Preparation
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-80
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(geo_data)
 
@@ -312,7 +312,7 @@ Data Preparation
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -330,7 +330,7 @@ new plotting api
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-84
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, section_names=['section1'])
 
@@ -350,7 +350,7 @@ new plotting api
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f06e13f0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f567cc10>
 
 
 
@@ -368,7 +368,7 @@ in the same situation as above:
 
 .. GENERATED FROM PYTHON SOURCE LINES 96-98
 
-.. code-block:: python3
+.. code-block:: Python
 
     p3 = gpv.plot_2d(geo_data)
 
@@ -392,7 +392,7 @@ any combination of the above:
 
 .. GENERATED FROM PYTHON SOURCE LINES 104-106
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, section_names=['topography'])
 
@@ -412,13 +412,13 @@ any combination of the above:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed601d80>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f21b93f0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-109
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, section_names=['section1'])
 
@@ -438,13 +438,13 @@ any combination of the above:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed6dc5b0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac81a740>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-112
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, section_names=['section1', 'section2'])
 
@@ -464,13 +464,13 @@ any combination of the above:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f0c4ce80>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac7f86d0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 113-114
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, figsize=(15, 15), section_names=['section1', 'section2', 'topography'], cell_number='mid')
 
@@ -489,14 +489,14 @@ any combination of the above:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ee2012d0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f567cc10>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.287 seconds)
+   **Total running time of the script:** (0 minutes 2.381 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_6_2d_visualization.py:
@@ -505,16 +505,13 @@ any combination of the above:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch1_6_2d_visualization.ipynb <ch1_6_2d_visualization.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch1_6_2d_visualization.py <ch1_6_2d_visualization.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch1_6_2d_visualization.ipynb <ch1_6_2d_visualization.ipynb>`
 
 
 .. only:: html

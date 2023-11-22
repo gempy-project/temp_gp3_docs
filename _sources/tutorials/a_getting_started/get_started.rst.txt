@@ -23,7 +23,7 @@ Getting Started
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-19
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Importing GemPy and viewer
@@ -55,7 +55,7 @@ appropriate.
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-39
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model: gp.data.GeoModel = gp.create_geomodel(
         project_name='Model1',
@@ -75,8 +75,8 @@ appropriate.
  .. code-block:: none
 
 
-    {'grid': <gempy.core.data.grid.Grid object at 0x7f44f0dd0490>,
-     'interpolation_options': InterpolationOptions(kernel_options={'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f4546ac7910>, derivative_div_r=<function cubic_function_p_div_r at 0x7f4546ac79a0>, second_derivative=<function cubic_function_a at 0x7f4546ac7a30>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}, number_octree_levels=4, current_octree_level=0, compute_scalar_gradient=False, mesh_extraction=True, mesh_extraction_masking_options=MeshExtractionMaskingOptions.INTERSECT, mesh_extraction_fancy=True, debug=True, debug_water_tight=False, _number_octree_levels_surface=4),
+    {'grid': <gempy.core.data.grid.Grid object at 0x7f08f5690520>,
+     'interpolation_options': InterpolationOptions(kernel_options={'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f090b7b1cf0>, derivative_div_r=<function cubic_function_p_div_r at 0x7f090b7b1d80>, second_derivative=<function cubic_function_a at 0x7f090b7b1e10>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}, number_octree_levels=4, current_octree_level=0, compute_scalar_gradient=False, mesh_extraction=True, mesh_extraction_masking_options=MeshExtractionMaskingOptions.INTERSECT, mesh_extraction_fancy=True, debug=True, debug_water_tight=False, sigmoid_slope=50000, _number_octree_levels_surface=4),
      'meta': GeoModelMeta(name='Model1',
                           creation_date=None,
                           last_modification_date=None,
@@ -117,7 +117,7 @@ the visualization windows. First, the 2D figure:
 
 .. GENERATED FROM PYTHON SOURCE LINES 49-51
 
-.. code-block:: python3
+.. code-block:: Python
 
     p2d = gpv.plot_2d(geo_model)
 
@@ -151,7 +151,7 @@ Let's load an image showing the details of a couple of boreholes:
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-71
 
-.. code-block:: python3
+.. code-block:: Python
 
     img = mpimg.imread('wells.png')
     p2d = gpv.plot_2d(geo_model, show=False)
@@ -176,7 +176,7 @@ Similarly, we can visualize in 3D using pyvista and vtk:
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-77
 
-.. code-block:: python3
+.. code-block:: Python
 
     p3d = gpv.plot_3d(geo_model, image=True)
 
@@ -212,7 +212,7 @@ surface, which marks the bottom of a unit. By default, GemPy surfaces are empty:
 
 .. GENERATED FROM PYTHON SOURCE LINES 90-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.structural_frame.structural_elements
 
@@ -245,7 +245,7 @@ coordinates on mouse hover (in qt5 backend). We can add a surface point like thi
 
 .. GENERATED FROM PYTHON SOURCE LINES 98-109
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.add_surface_points(
         geo_model=geo_model,
@@ -277,7 +277,7 @@ coordinates on mouse hover (in qt5 backend). We can add a surface point like thi
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f0a3d120>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f21222c0>
 
 
 
@@ -287,7 +287,7 @@ We can now add other points for the layer:
 
 .. GENERATED FROM PYTHON SOURCE LINES 113-124
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.add_surface_points(
         geo_model=geo_model,
@@ -319,7 +319,7 @@ We can now add other points for the layer:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f09f1d80>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f088aa13010>
 
 
 
@@ -335,7 +335,7 @@ Let's add an orientation:
 
 .. GENERATED FROM PYTHON SOURCE LINES 134-148
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.add_orientations(
         geo_model=geo_model,
@@ -370,7 +370,7 @@ Let's add an orientation:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44ed6a7ca0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f2195a80>
 
 
 
@@ -382,7 +382,7 @@ Removing auto anisotropy for this 2.5D model.
 
 .. GENERATED FROM PYTHON SOURCE LINES 152-154
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.update_transform(gp.data.GlobalAnisotropy.NONE)
 
@@ -401,7 +401,7 @@ With the provided data, we can now interpolate the 3D surface.
 
 .. GENERATED FROM PYTHON SOURCE LINES 158-161
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     gp.compute_model(geo_model, engine_config=gp.data.GemPyEngineConfig())
@@ -415,7 +415,7 @@ With the provided data, we can now interpolate the 3D surface.
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -433,7 +433,7 @@ Display interpolation kernel options:
 
 .. GENERATED FROM PYTHON SOURCE LINES 163-165
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.interpolation_options.kernel_options
 
@@ -463,7 +463,7 @@ Interpolated 3D surface can be visualized both in 2D and 3D.
 
 .. GENERATED FROM PYTHON SOURCE LINES 169-176
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # 2D visualization:
@@ -491,7 +491,7 @@ Interpolated 3D surface can be visualized both in 2D and 3D.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44ed712530>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f2084b50>
 
 
 
@@ -503,7 +503,7 @@ Our cross-section image displays 4 layers, yet we only defined 2. Let's add two 
 
 .. GENERATED FROM PYTHON SOURCE LINES 180-184
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Display current structural frame:
@@ -555,7 +555,7 @@ Adding points and properties for the next layer.
 
 .. GENERATED FROM PYTHON SOURCE LINES 188-208
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     element2 = gp.data.StructuralElement(
@@ -597,7 +597,7 @@ Adding points and properties for the next layer.
 
     Setting Backend To: AvailableBackends.numpy
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f0793430>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f521ba00>
 
 
 
@@ -609,7 +609,7 @@ Adding points and properties for another layer.
 
 .. GENERATED FROM PYTHON SOURCE LINES 212-233
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     element3 = gp.data.StructuralElement(
@@ -652,7 +652,7 @@ Adding points and properties for another layer.
 
     Setting Backend To: AvailableBackends.numpy
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f0614eb0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f50fff10>
 
 
 
@@ -672,7 +672,7 @@ Add the fault's input data:
 
 .. GENERATED FROM PYTHON SOURCE LINES 244-277
 
-.. code-block:: python3
+.. code-block:: Python
 
     element_fault = gp.data.StructuralElement(
         name='fault1',
@@ -721,7 +721,7 @@ Add the fault's input data:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f0633340>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f5173940>
 
 
 
@@ -731,7 +731,7 @@ Compute and visualize the updated model:
 
 .. GENERATED FROM PYTHON SOURCE LINES 279-283
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(geo_model)
     gpv.plot_2d(geo_model, cell_number=5, legend='force')
@@ -757,7 +757,7 @@ Compute and visualize the updated model:
 
     Setting Backend To: AvailableBackends.numpy
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f0803a30>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f1fe7730>
 
 
 
@@ -770,7 +770,7 @@ Here, we'll showcase a few of them.
 
 .. GENERATED FROM PYTHON SOURCE LINES 288-308
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Topography:
@@ -825,7 +825,7 @@ Here, we'll showcase a few of them.
     Active grids: ['topography']
     Setting Backend To: AvailableBackends.numpy
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f06bee90>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f1f6eda0>
 
 
 
@@ -858,7 +858,7 @@ sphinx_gallery_thumbnail_number = -2
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.917 seconds)
+   **Total running time of the script:** (0 minutes 5.821 seconds)
 
 
 .. _sphx_glr_download_tutorials_a_getting_started_get_started.py:
@@ -867,16 +867,13 @@ sphinx_gallery_thumbnail_number = -2
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: get_started.ipynb <get_started.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: get_started.py <get_started.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: get_started.ipynb <get_started.ipynb>`
 
 
 .. only:: html

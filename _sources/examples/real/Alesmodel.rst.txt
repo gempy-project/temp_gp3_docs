@@ -32,7 +32,7 @@ Alesmodel: Plotting sections and maps.
 
 .. GENERATED FROM PYTHON SOURCE LINES 15-22
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     import gempy as gp
@@ -50,7 +50,7 @@ Alesmodel: Plotting sections and maps.
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-33
 
-.. code-block:: python3
+.. code-block:: Python
 
     cwd = os.getcwd()
     if 'examples' not in cwd:
@@ -71,7 +71,7 @@ Alesmodel: Plotting sections and maps.
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-45
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model: gp.data.GeoModel = gp.create_geomodel(
         project_name='Claudius',
@@ -93,7 +93,7 @@ Alesmodel: Plotting sections and maps.
 
 .. GENERATED FROM PYTHON SOURCE LINES 46-53
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_section_grid(
         grid=geo_model.grid,
@@ -146,7 +146,7 @@ sorting of lithologies
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-68
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_model,
@@ -264,7 +264,7 @@ Change colors
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-74
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.structural_frame.get_element_by_name("LIAS").color = "#015482"
     geo_model.structural_frame.get_element_by_name("TRIAS").color = "#9f0052"
@@ -279,7 +279,7 @@ Change colors
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-77
 
-.. code-block:: python3
+.. code-block:: Python
 
     a = gpv.plot_2d(geo_model, direction='y')
 
@@ -297,7 +297,7 @@ Change colors
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-80
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_section_traces(geo_model)
 
@@ -315,7 +315,7 @@ Change colors
  .. code-block:: none
 
 
-    <function plot_section_traces at 0x7f672f200ca0>
+    <function plot_section_traces at 0x7fe0d9167010>
 
 
 
@@ -327,7 +327,7 @@ Faults
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-96
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_is_fault(
         frame=geo_model.structural_frame,
@@ -438,12 +438,12 @@ Topography
 
 .. GENERATED FROM PYTHON SOURCE LINES 102-111
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_topography_from_file(
         grid=geo_model.grid,
         filepath=path_dem,
-        crop_to_extent=[729550.0, 751500.0, 1913500.0, 1923650.0]
+        crop_to_extent=[729550.0, 751500.0, 1_913_500.0, 1923650.0]
     )
 
 
@@ -471,13 +471,13 @@ Topography
       warnings.warn("Welly or Striplog not installed. No well reader possible.")
     Active grids: ['topography' 'sections']
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f66df467250>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe0c89c2a40>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 112-114
 
-.. code-block:: python3
+.. code-block:: Python
 
     carbo = geo_model.structural_frame.get_group_by_name("Carbon_Series")
 
@@ -490,7 +490,7 @@ Topography
 
 .. GENERATED FROM PYTHON SOURCE LINES 115-123
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.interpolation_options.number_octree_levels_surface = 4
     geo_model.interpolation_options.kernel_options.range = .8
@@ -593,7 +593,7 @@ Topography
 
 .. GENERATED FROM PYTHON SOURCE LINES 124-127
 
-.. code-block:: python3
+.. code-block:: Python
 
     print(geo_model.structural_frame)
     geo_model.structural_frame
@@ -766,7 +766,7 @@ Topography
 
 .. GENERATED FROM PYTHON SOURCE LINES 128-138
 
-.. code-block:: python3
+.. code-block:: Python
 
     _ = gp.compute_model(
         geo_model,
@@ -794,62 +794,16 @@ Topography
     Setting Backend To: AvailableBackends.numpy
     /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
-    A size: (28, 28)
-    [KeOps] Generating code for formula Sum_Reduction((10*((((((Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(3,3,1)))*-Sum((Var(0,3,0)-Var(1,3,1))*(Var(4,3,0)*Var(5,3,1))))/(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2+Var(6,1,2)))*(-(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))+(7*(((9*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5)-Var(11,1,2)*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))+Var(12,1,2)*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))-Var(13,1,2)))/Var(14,1,2))-(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(Step(Var(17,1,2)-(Var(15,1,0)-Var(16,1,1))**2)*Var(18,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(4*(((((((1-7*(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2))/Var(21,1,2))**2)+(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),3))/Var(22,1,2))-(7*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),5))/Var(23,1,2))+(3*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),7))/Var(24,1,2))-((((1-7*(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2))/Var(25,1,2))**2)+(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),3))/Var(26,1,2))-(7*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),5))/Var(27,1,2))+(3*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),7))/Var(28,1,2)))-((((1-7*(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2))/Var(29,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),3))/Var(30,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),5))/Var(31,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),7))/Var(32,1,2)))+((((1-7*(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))/Var(33,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(34,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(35,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),7))/Var(36,1,2)))+(Step(Var(39,1,2)-(Var(37,1,0)-Var(38,1,1))**2)*Var(40,1,2))*-(Sum(Var(2,3,0)*Var(5,3,1))-1)))+2*(-(Sum((Var(19,3,0)-Var(20,3,1))*(Var(2,3,0)*Var(41,3,1)))-Sum((Var(19,3,0)-Var(20,3,1))*(Var(42,3,0)*Var(5,3,1))))*(((Var(44,1,2)+(105*Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)))/Var(43,1,2))-(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),3))/Var(45,1,2))+(21*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),5))/Var(46,1,2))+(Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(47,3,1)))-Sum((Var(0,3,0)-Var(1,3,1))*(Var(48,3,0)*Var(5,3,1))))*(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))))+(-Sum(Var(49,2,0)*(Var(50,2,1)+1))*(4*(Sum(Var(51,3,0)*Var(52,3,1))*Sum(Var(53,3,0)*Var(54,3,1))-Sum(Var(55,3,0)*Var(56,3,1))*Sum(Var(57,3,0)*Var(58,3,1)))+2*(Sum(Var(59,3,0)*Var(60,3,1))-Sum(Var(61,3,0)*Var(62,3,1))))+Sum(Var(49,2,0)*(Var(50,2,1)+1))*((Sum(Var(63,3,0)*Var(64,3,1))+2*Sum(Var(65,3,0)*Var(66,3,1)))+2*(Sum(Var(67,3,0)*Var(68,3,1))*-(-2+Sum(Var(69,3,0)*Var(70,3,1)))))))*Var(71,1,1),0) ... OK
-    CG iterations: 89
-    [KeOps] Generating code for formula Sum_Reduction((10*(-4*(((((1-7*(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2))/Var(2,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/Var(3,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/Var(4,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),7))/Var(5,1,2))-((((1-7*(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2))/Var(8,1,2))**2)+(35*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),3))/Var(9,1,2))-(7*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),5))/Var(10,1,2))+(3*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),7))/Var(11,1,2)))+2*(Sum((Var(6,3,1)-Var(7,3,0))*(Var(12,3,1)*Var(13,3,0)))*(((Var(15,1,2)+(105*Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)))/Var(14,1,2))-(35*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),3))/Var(16,1,2))+(21*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),5))/Var(17,1,2))))+Sum(Var(18,2,1)*(Var(19,2,0)+1))*(2*Sum(Var(20,3,1)*Var(21,3,0))+4*(Sum(Var(22,3,1)*Var(23,3,0))*Sum(Var(24,3,1)*Var(25,3,0)))))*Var(26,1,1),0) ... OK
-    A size: (13, 13)
-    CG iterations: 14
-    A size: (16, 16)
-    CG iterations: 28
-    A size: (376, 376)
-    [KeOps] Generating code for formula Sum_Reduction(((10*((((((Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(3,3,1)))*-Sum((Var(0,3,0)-Var(1,3,1))*(Var(4,3,0)*Var(5,3,1))))/(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2+Var(6,1,2)))*(-(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))+(7*(((9*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5)-Var(11,1,2)*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))+Var(12,1,2)*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))-Var(13,1,2)))/Var(14,1,2))-(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(Step(Var(17,1,2)-(Var(15,1,0)-Var(16,1,1))**2)*Var(18,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(4*(((((((1-7*(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2))/Var(21,1,2))**2)+(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),3))/Var(22,1,2))-(7*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),5))/Var(23,1,2))+(3*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),7))/Var(24,1,2))-((((1-7*(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2))/Var(25,1,2))**2)+(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),3))/Var(26,1,2))-(7*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),5))/Var(27,1,2))+(3*Pow(Sqrt(Sum((Var(19,3,0)-Var(1,3,1))**2)),7))/Var(28,1,2)))-((((1-7*(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2))/Var(29,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),3))/Var(30,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),5))/Var(31,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(20,3,1))**2)),7))/Var(32,1,2)))+((((1-7*(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))/Var(33,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(34,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(35,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),7))/Var(36,1,2)))+(Step(Var(39,1,2)-(Var(37,1,0)-Var(38,1,1))**2)*Var(40,1,2))*-(Sum(Var(2,3,0)*Var(5,3,1))-1)))+2*(-(Sum((Var(19,3,0)-Var(20,3,1))*(Var(2,3,0)*Var(41,3,1)))-Sum((Var(19,3,0)-Var(20,3,1))*(Var(42,3,0)*Var(5,3,1))))*(((Var(44,1,2)+(105*Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)))/Var(43,1,2))-(35*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),3))/Var(45,1,2))+(21*Pow(Sqrt(Sum((Var(19,3,0)-Var(20,3,1))**2)),5))/Var(46,1,2))+(Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(47,3,1)))-Sum((Var(0,3,0)-Var(1,3,1))*(Var(48,3,0)*Var(5,3,1))))*(((Var(8,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/Var(7,1,2))-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/Var(9,1,2))+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/Var(10,1,2))))+(-Sum(Var(49,2,0)*(Var(50,2,1)+1))*(4*(Sum(Var(51,3,0)*Var(52,3,1))*Sum(Var(53,3,0)*Var(54,3,1))-Sum(Var(55,3,0)*Var(56,3,1))*Sum(Var(57,3,0)*Var(58,3,1)))+2*(Sum(Var(59,3,0)*Var(60,3,1))-Sum(Var(61,3,0)*Var(62,3,1))))+Sum(Var(49,2,0)*(Var(50,2,1)+1))*((Sum(Var(63,3,0)*Var(64,3,1))+2*Sum(Var(65,3,0)*Var(66,3,1)))+2*(Sum(Var(67,3,0)*Var(68,3,1))*-(-2+Sum(Var(69,3,0)*Var(70,3,1)))))))+Sum(Var(71,2,0)*(Var(72,2,1)+1))*((Sum(Var(73,3,0)*Var(74,3,1))-Sum(Var(75,3,0)*Var(76,3,1)))+Var(77,1,2)))*Var(78,1,1),0) ... OK
-    CG iterations: 100
-    [KeOps] Generating code for formula Sum_Reduction(((10*(-4*(((((1-7*(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2))/Var(2,1,2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/Var(3,1,2))-(7*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/Var(4,1,2))+(3*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),7))/Var(5,1,2))-((((1-7*(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2))/Var(8,1,2))**2)+(35*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),3))/Var(9,1,2))-(7*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),5))/Var(10,1,2))+(3*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),7))/Var(11,1,2)))+2*(Sum((Var(6,3,1)-Var(7,3,0))*(Var(12,3,1)*Var(13,3,0)))*(((Var(15,1,2)+(105*Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)))/Var(14,1,2))-(35*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),3))/Var(16,1,2))+(21*Pow(Sqrt(Sum((Var(6,3,1)-Var(7,3,0))**2)),5))/Var(17,1,2))))+Sum(Var(18,2,1)*(Var(19,2,0)+1))*(2*Sum(Var(20,3,1)*Var(21,3,0))+4*(Sum(Var(22,3,1)*Var(23,3,0))*Sum(Var(24,3,1)*Var(25,3,0)))))+Sum(Var(26,2,1)*(Var(27,2,0)+1))*Sum(Var(28,3,1)*Var(29,3,0)))*Var(30,1,1),0) ... OK
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    A size: (302, 302)
-    CG iterations: 100
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
-    [pyKeOps] Warning : at least one of the input tensors is not contiguous. Consider using contiguous data arrays to avoid unnecessary copies.
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f66e4a5c880>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe0c8643b50>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 139-142
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[4], direction=['y'], show_topography=True, show_data=True)
     gpv.plot_2d(geo_model, cell_number=[-4], direction=['y'], show_topography=True, show_data=True)
@@ -880,7 +834,7 @@ Topography
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f67216c5150>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe0845c8e80>
 
 
 
@@ -890,9 +844,9 @@ sphinx_gallery_thumbnail_number = -1
 
 .. GENERATED FROM PYTHON SOURCE LINES 144-145
 
-.. code-block:: python3
+.. code-block:: Python
 
-    gpv.plot_3d(geo_model, show_lith=True, show_topography=False, kwargs_plot_structured_grid={'opacity': 0.2})
+    gpv.plot_3d(geo_model, show_lith=True, show_topography=True, kwargs_plot_structured_grid={'opacity': 0.8})
 
 
 
@@ -907,14 +861,14 @@ sphinx_gallery_thumbnail_number = -1
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f66df467670>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe0d9c2a5c0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.197 seconds)
+   **Total running time of the script:** (1 minutes 40.412 seconds)
 
 
 .. _sphx_glr_download_examples_real_Alesmodel.py:
@@ -923,16 +877,13 @@ sphinx_gallery_thumbnail_number = -1
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: Alesmodel.ipynb <Alesmodel.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: Alesmodel.py <Alesmodel.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: Alesmodel.ipynb <Alesmodel.ipynb>`
 
 
 .. only:: html

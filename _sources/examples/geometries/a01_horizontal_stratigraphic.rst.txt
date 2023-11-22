@@ -26,7 +26,7 @@ a Python-based, open-source library for implicit geological modeling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-16
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Import necessary libraries
@@ -50,7 +50,7 @@ Define the path to data
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-39
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = 'https://raw.githubusercontent.com/cgre-aachen/gempy_data/master/'
     # Create a GeoModel instance
@@ -83,7 +83,7 @@ Define the path to data
     Surface points hash:  6f1a39ed77e87a4057f03629c946b1876b87e24409cadfe0e1cf7ab1488f69e4
     Orientations hash:  04c307ae23f70252fe54144a2fb95ca7d96584a2d497ea539ed32dfd23e7cd5d
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -95,7 +95,7 @@ Plot the initial geological model in the y direction without results
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-46
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, direction=['y'], show_results=False)
 
@@ -135,14 +135,14 @@ Plot the initial geological model in the y direction without results
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc50717190>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f088aa48730>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.909 seconds)
+   **Total running time of the script:** (0 minutes 0.842 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_a01_horizontal_stratigraphic.py:
@@ -151,16 +151,13 @@ Plot the initial geological model in the y direction without results
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: a01_horizontal_stratigraphic.ipynb <a01_horizontal_stratigraphic.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a01_horizontal_stratigraphic.py <a01_horizontal_stratigraphic.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: a01_horizontal_stratigraphic.ipynb <a01_horizontal_stratigraphic.ipynb>`
 
 
 .. only:: html

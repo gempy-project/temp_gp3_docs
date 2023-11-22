@@ -35,7 +35,7 @@ Importing GemPy
 
 .. GENERATED FROM PYTHON SOURCE LINES 16-29
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -64,7 +64,7 @@ Creating the model by importing the input data and displaying it:
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-47
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = os.path.abspath('../../')
 
@@ -93,7 +93,7 @@ Setting and ordering the units and series:
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-60
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_data,
@@ -163,7 +163,7 @@ no mesh computed as basically 2D model
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-68
 
-.. code-block:: python3
+.. code-block:: Python
 
     sol = gp.compute_model(geo_data)
 
@@ -176,7 +176,7 @@ no mesh computed as basically 2D model
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -189,7 +189,7 @@ So here is the very simple, basically 2D model that we created:
 
 .. GENERATED FROM PYTHON SOURCE LINES 73-75
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, cell_number=0, show_data=False)
 
@@ -207,7 +207,7 @@ So here is the very simple, basically 2D model that we created:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed68e470>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f28bcdeadd0>
 
 
 
@@ -230,7 +230,7 @@ conditioning data (data measured at locations)
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     cond_data = np.array([[100, .5, 500, 2], [900, .5, 500, 1],
                           [500, .5, 550, 1], [300, .5, 400, 5]])
@@ -248,7 +248,7 @@ creating a domain object from the gempy solution, a defined domain conditioning 
 
 .. GENERATED FROM PYTHON SOURCE LINES 94-101
 
-.. code-block:: python3
+.. code-block:: Python
 
     domain = kriging.Domain(
         model_solutions=sol,
@@ -272,7 +272,7 @@ creating a domain object from the gempy solution, a defined domain conditioning 
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-113
 
-.. code-block:: python3
+.. code-block:: Python
 
     variogram_model = kriging.VariogramModel(
         theoretical_model='exponential',
@@ -289,7 +289,7 @@ creating a domain object from the gempy solution, a defined domain conditioning 
 
 .. GENERATED FROM PYTHON SOURCE LINES 114-117
 
-.. code-block:: python3
+.. code-block:: Python
 
     variogram_model.plot(type_='both', show_parameters=True)
     plt.show()
@@ -320,7 +320,7 @@ input parameters. Finally we generate the kriged field.
 
 .. GENERATED FROM PYTHON SOURCE LINES 129-131
 
-.. code-block:: python3
+.. code-block:: Python
 
     kriging_solution = kriging.create_kriged_field(domain, variogram_model)
 
@@ -340,7 +340,7 @@ the grid:
 
 .. GENERATED FROM PYTHON SOURCE LINES 138-141
 
-.. code-block:: python3
+.. code-block:: Python
 
     kriging_solution.results_df.head()
 
@@ -434,7 +434,7 @@ way gempy models are plotted.
 
 .. GENERATED FROM PYTHON SOURCE LINES 148-165
 
-.. code-block:: python3
+.. code-block:: Python
 
     from gempy_viewer.modules.plot_2d.visualization_2d import Plot2D
 
@@ -467,7 +467,7 @@ way gempy models are plotted.
 
 .. GENERATED FROM PYTHON SOURCE LINES 166-182
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot_2d_both = gpv.plot_2d(
         model=geo_data,
@@ -509,7 +509,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. GENERATED FROM PYTHON SOURCE LINES 192-194
 
-.. code-block:: python3
+.. code-block:: Python
 
     solution_sim = kriging.create_gaussian_field(domain, variogram_model)
 
@@ -522,7 +522,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. GENERATED FROM PYTHON SOURCE LINES 195-197
 
-.. code-block:: python3
+.. code-block:: Python
 
     solution_sim.results_df.head()
 
@@ -609,7 +609,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. GENERATED FROM PYTHON SOURCE LINES 198-200
 
-.. code-block:: python3
+.. code-block:: Python
 
     solution_sim.results_df['estimated value']
 
@@ -639,7 +639,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. GENERATED FROM PYTHON SOURCE LINES 201-216
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot_2d: Plot2D = gpv.plot_2d(
         model=geo_data,
@@ -670,7 +670,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. GENERATED FROM PYTHON SOURCE LINES 217-233
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot_2d_both = gpv.plot_2d(
         model=geo_data,
@@ -703,7 +703,7 @@ Gaussian Simulation approach is applied in this module:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.342 seconds)
+   **Total running time of the script:** (0 minutes 12.384 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch3-Interpolations_ch3_1_kriging_interpolation_and_simulation.py:
@@ -712,16 +712,13 @@ Gaussian Simulation approach is applied in this module:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch3_1_kriging_interpolation_and_simulation.ipynb <ch3_1_kriging_interpolation_and_simulation.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch3_1_kriging_interpolation_and_simulation.py <ch3_1_kriging_interpolation_and_simulation.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch3_1_kriging_interpolation_and_simulation.ipynb <ch3_1_kriging_interpolation_and_simulation.ipynb>`
 
 
 .. only:: html

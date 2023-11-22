@@ -26,7 +26,7 @@ an open-source, Python-based library for building implicit geological models.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-53
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Importing necessary libraries
@@ -84,7 +84,7 @@ an open-source, Python-based library for building implicit geological models.
     Surface points hash:  dd7b2f714c1c20cb7ce615c5c47ecc4cf3ca2ee3419e4090b2f11fbf633d459f
     Orientations hash:  4043b59bbfa7012abd818f04f74e2b0667ba970dd71c781512289bc073f5a6d5
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -156,7 +156,7 @@ Plot the initial geological model in the y direction
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-57
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(data, direction=['y'], show_results=False)
 
@@ -174,7 +174,7 @@ Plot the initial geological model in the y direction
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc921fcac0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac96fc40>
 
 
 
@@ -184,7 +184,7 @@ Plot the result of the model in the y and x directions with data and boundaries
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-69
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(data, direction='y', show_data=True, show_boundaries=True)
     gpv.plot_2d(data, direction='x', show_data=True)
@@ -229,7 +229,7 @@ Plot the result of the model in the y and x directions with data and boundaries
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc5062ea70>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac5f2c80>
 
 
 
@@ -239,7 +239,7 @@ The 3D plot is commented out due to a bug.
 
 .. GENERATED FROM PYTHON SOURCE LINES 71-72
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(data)
 
@@ -256,14 +256,14 @@ The 3D plot is commented out due to a bug.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7efc502fd7e0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f1e6a170>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  22.231 seconds)
+   **Total running time of the script:** (1 minutes 20.113 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_g07_combination.py:
@@ -272,16 +272,13 @@ The 3D plot is commented out due to a bug.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: g07_combination.ipynb <g07_combination.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: g07_combination.py <g07_combination.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: g07_combination.ipynb <g07_combination.ipynb>`
 
 
 .. only:: html

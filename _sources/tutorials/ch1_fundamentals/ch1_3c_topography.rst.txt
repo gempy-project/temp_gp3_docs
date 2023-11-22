@@ -23,7 +23,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-13
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -45,7 +45,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-32
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = os.path.abspath('../../')
 
@@ -69,7 +69,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-42
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_section_grid(
         grid=geo_model.grid,
@@ -137,7 +137,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-77
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # This is to make it work in sphinx gallery
@@ -184,7 +184,7 @@ sphinx_gallery_thumbnail_number = 2
 
 .. GENERATED FROM PYTHON SOURCE LINES 92-96
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     gp.set_topography_from_random(grid=geo_model.grid)
@@ -206,7 +206,7 @@ sphinx_gallery_thumbnail_number = 2
     [200. 500.]
     Active grids: ['topography' 'sections']
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44f06ab130>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f088aa494b0>
 
 
 
@@ -235,7 +235,7 @@ It has additional keywords to play around with:
 
 .. GENERATED FROM PYTHON SOURCE LINES 119-126
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_topography_from_random(
         grid=geo_model.grid,
@@ -254,7 +254,7 @@ It has additional keywords to play around with:
 
     Active grids: ['topography' 'sections']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7f44f06aa680>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7f08f2160760>
 
 
 
@@ -266,7 +266,7 @@ Compute model
 
 .. GENERATED FROM PYTHON SOURCE LINES 132-134
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(geo_model)
 
@@ -279,7 +279,7 @@ Compute model
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -302,7 +302,7 @@ It can be visualized using the 2D and 3D plotting functionality:
 
 .. GENERATED FROM PYTHON SOURCE LINES 143-145
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, show_topography=True, section_names=['topography'], show_boundaries=False, show_data=True)
 
@@ -320,13 +320,13 @@ It can be visualized using the 2D and 3D plotting functionality:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed603130>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f1f30790>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 146-148
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, show_topography=True, section_names=['section1'])
 
@@ -346,13 +346,13 @@ It can be visualized using the 2D and 3D plotting functionality:
     /home/leguark/gempy_viewer/gempy_viewer/API/_plot_2d_sections_api.py:106: UserWarning: Section contacts not implemented yet. We need to pass scalar field for the sections grid
       warnings.warn(
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed6dffa0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f5192ef0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 149-158
 
-.. code-block:: python3
+.. code-block:: Python
 
     g3d = gpv.plot_3d(
         model=geo_model,
@@ -381,7 +381,7 @@ sphinx_gallery_thumbnail_number = 3
 
 .. GENERATED FROM PYTHON SOURCE LINES 160-167
 
-.. code-block:: python3
+.. code-block:: Python
 
     g3d = gpv.plot_3d(
         model=geo_model,
@@ -405,7 +405,7 @@ sphinx_gallery_thumbnail_number = 3
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.421 seconds)
+   **Total running time of the script:** (0 minutes 4.335 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_3c_topography.py:
@@ -414,16 +414,13 @@ sphinx_gallery_thumbnail_number = 3
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch1_3c_topography.ipynb <ch1_3c_topography.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch1_3c_topography.py <ch1_3c_topography.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch1_3c_topography.ipynb <ch1_3c_topography.ipynb>`
 
 
 .. only:: html

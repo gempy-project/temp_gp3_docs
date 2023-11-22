@@ -26,7 +26,7 @@ an open-source, Python-based library for building implicit geological models.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-17
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Importing necessary libraries
@@ -51,7 +51,7 @@ Define the path to data
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-47
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = 'https://raw.githubusercontent.com/cgre-aachen/gempy_data/master/'
     path_to_data = data_path + "/data/input_data/jan_models/"
@@ -91,7 +91,7 @@ Define the path to data
     Surface points hash:  7f8130574e9fd3deb75ffcbfcafff5b6b832d233ee95246f4be17e5cb8575712
     Orientations hash:  580fd4be0d29ee09c4018f629b4a1b3545faeae127e6532e66f730e7f0203e69
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -103,7 +103,7 @@ Plot the initial geological model in the y direction
 
 .. GENERATED FROM PYTHON SOURCE LINES 49-51
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, direction=['y'], show_results=False)
 
@@ -121,7 +121,7 @@ Plot the initial geological model in the y direction
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc922149a0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f5568430>
 
 
 
@@ -131,7 +131,7 @@ Plot the result of the model in the y and x directions with data
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-56
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, direction='y', show_data=True)
     gpv.plot_2d(geo_data, direction='x', show_data=True)
@@ -162,14 +162,14 @@ Plot the result of the model in the y and x directions with data
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc507b0ee0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f2120460>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.451 seconds)
+   **Total running time of the script:** (0 minutes 2.412 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_f06_unconformity.py:
@@ -178,16 +178,13 @@ Plot the result of the model in the y and x directions with data
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: f06_unconformity.ipynb <f06_unconformity.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: f06_unconformity.py <f06_unconformity.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: f06_unconformity.ipynb <f06_unconformity.ipynb>`
 
 
 .. only:: html

@@ -23,7 +23,7 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 5-17
 
-.. code-block:: python3
+.. code-block:: Python
 
     import os
 
@@ -46,7 +46,7 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-24
 
-.. code-block:: python3
+.. code-block:: Python
 
     cwd = os.getcwd()
     if 'examples' not in cwd:
@@ -63,13 +63,13 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-36
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model: gp.data.GeoModel = gp.create_geomodel(
         project_name='Perth_Basin',
         extent=[337000, 400000, 6640000, 6710000, -18000, 1000],
         resolution=[100, 100, 100],
-        refinement=6,
+        refinement=4,
         importer_helper=gp.data.ImporterHelper(
             path_to_orientations=data_path + "/data/input_data/perth_basin/Paper_GU2F_sc_faults_topo_Foliations.csv",
             path_to_surface_points=data_path + "/data/input_data/perth_basin/Paper_GU2F_sc_faults_topo_Points.csv",
@@ -85,7 +85,7 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-39
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.structural_frame
 
@@ -204,7 +204,7 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 40-46
 
-.. code-block:: python3
+.. code-block:: Python
 
     del_surfaces = ['Cadda', 'Woodada_Kockatea', 'Cattamarra']
     for s in del_surfaces:
@@ -312,7 +312,7 @@ Perth basin.
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-62
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_model,
@@ -491,7 +491,7 @@ Select which series are faults
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-82
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     gp.set_is_fault(
@@ -669,7 +669,7 @@ gp.set_fault_relation(geo_model, fr)
 
 .. GENERATED FROM PYTHON SOURCE LINES 84-87
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     print(geo_model.structural_frame.fault_relations)
@@ -701,7 +701,7 @@ gp.set_fault_relation(geo_model, fr)
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-91
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, direction=['z'])
 
@@ -719,13 +719,13 @@ gp.set_fault_relation(geo_model, fr)
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe733a5dd50>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe083b40c40>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 92-94
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_topography_from_random(geo_model.grid)
 
@@ -740,13 +740,13 @@ gp.set_fault_relation(geo_model, fr)
     [-2800.  1000.]
     Active grids: ['topography']
 
-    <gempy.core.data.grid_modules.topography.Topography object at 0x7fe733a5e680>
+    <gempy.core.data.grid_modules.topography.Topography object at 0x7fe0d0253e20>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 95-97
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model)
 
@@ -764,13 +764,13 @@ gp.set_fault_relation(geo_model, fr)
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe6f03670d0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe0848b50c0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 98-106
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.compute_model(
         gempy_model=geo_model,
@@ -791,27 +791,36 @@ gp.set_fault_relation(geo_model, fr)
     Setting Backend To: AvailableBackends.PYTORCH
     /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 1908.8402911741252.
+    Condition number: 66361.2799128913.
+    Condition number: 66441.6487618764.
+    Condition number: 40320.98828234435.
+    Condition number: 39299.2334698527.
+    Condition number: 42968.81238468715.
+    Condition number: 45471.0519035656.
+    Condition number: 38436.90292047045.
+    Condition number: 481694.86151745764.
 
 
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <b>Solutions:</b> 6 Octree Levels, 13 DualContouringMeshes
+    <b>Solutions:</b> 4 Octree Levels, 13 DualContouringMeshes
     </div>
     <br />
     <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-109
 
-.. code-block:: python3
+.. code-block:: Python
 
-    gpv.plot_2d(geo_model, cell_number=[25])
+    gpv.plot_2d(geo_model, cell_number="mid")
 
 
 
 
 .. image-sg:: /examples/real/images/sphx_glr_Perth_basin_003.png
-   :alt: Cell Number: 25 Direction: y
+   :alt: Cell Number: mid Direction: y
    :srcset: /examples/real/images/sphx_glr_Perth_basin_003.png
    :class: sphx-glr-single-img
 
@@ -821,21 +830,21 @@ gp.set_fault_relation(geo_model, fr)
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe73d354b80>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe0d00d3a60>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-112
 
-.. code-block:: python3
+.. code-block:: Python
 
-    gpv.plot_2d(geo_model, cell_number=[25], series_n=-1, show_scalar=True)
+    gpv.plot_2d(geo_model, cell_number="mid", series_n=-1, show_scalar=True)
 
 
 
 
 .. image-sg:: /examples/real/images/sphx_glr_Perth_basin_004.png
-   :alt: Cell Number: 25 Direction: y
+   :alt: Cell Number: mid Direction: y
    :srcset: /examples/real/images/sphx_glr_Perth_basin_004.png
    :class: sphx-glr-single-img
 
@@ -845,13 +854,13 @@ gp.set_fault_relation(geo_model, fr)
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe6f0364f10>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe0848b7cd0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 113-115
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[12], direction=["y"], show_data=True, show_topography=True)
 
@@ -869,7 +878,7 @@ gp.set_fault_relation(geo_model, fr)
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe72bfd2680>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fe0610ab1c0>
 
 
 
@@ -877,13 +886,11 @@ gp.set_fault_relation(geo_model, fr)
 
 sphinx_gallery_thumbnail_number = 6
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-119
+.. GENERATED FROM PYTHON SOURCE LINES 117-117
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model, show_topography=True)
-
-
 
 
 .. image-sg:: /examples/real/images/sphx_glr_Perth_basin_006.png
@@ -897,47 +904,14 @@ sphinx_gallery_thumbnail_number = 6
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe72bfab910>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7fe060ec5e10>
 
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 120-150
-
-Times
------
-
-Fast run
-^^^^^^^^
-
--  1M voxels:
-
-   -  CPU: intel® Core™ i7-7700HQ CPU @ 2.80GHz × 8 15 s ± 1.02 s per
-      loop (mean ± std. dev. of 7 runs, 1 loop each)
-   -  GPU (4gb) not enough memmory
-   -  Ceres 1M voxels 2080 851 ms
-
--  250k voxels
-
-   -  GPU 1050Ti: 3.11 s ± 11.8 ms per loop (mean ± std. dev. of 7 runs,
-      1 loop each)
-   -  CPU: intel® Core™ i7-7700HQ CPU @ 2.80GHz × 8 2.27 s ± 47.3 ms
-   -  
-
-Fast Compile
-^^^^^^^^^^^^
-
--  250k voxels
-
-   -  GPU 1050Ti: 3.7 s ± 11.8 ms per loop (mean ± std. dev. of 7 runs,
-      1 loop each)
-   -  CPU: intel® Core™ i7-7700HQ CPU @ 2.80GHz × 8 14.2 s ± 51.1 ms per
-      loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.382 seconds)
+   **Total running time of the script:** (0 minutes 6.602 seconds)
 
 
 .. _sphx_glr_download_examples_real_Perth_basin.py:
@@ -946,16 +920,13 @@ Fast Compile
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: Perth_basin.ipynb <Perth_basin.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: Perth_basin.py <Perth_basin.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: Perth_basin.ipynb <Perth_basin.ipynb>`
 
 
 .. only:: html

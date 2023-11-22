@@ -26,7 +26,7 @@ a Python-based, open-source library for implicit geological modeling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-17
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Import necessary libraries
@@ -51,7 +51,7 @@ Define the path to data
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-41
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = 'https://raw.githubusercontent.com/cgre-aachen/gempy_data/master/'
     path_to_data = data_path + "/data/input_data/jan_models/"
@@ -85,7 +85,7 @@ Define the path to data
     Surface points hash:  2790bb25dce52b1a99e4a95e3e9dc276a842dbcc863051d0a4cf4169a8de9a6e
     Orientations hash:  26fda5d7c0a74291d5fa18f880aeb84c106af0b771f95af103a025e4e80c4669
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -97,7 +97,7 @@ Plot the initial geological model in the y direction without results
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-48
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, direction=['y'], show_results=False)
 
@@ -137,14 +137,14 @@ Plot the initial geological model in the y direction without results
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc50a13fd0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f50fc700>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.591 seconds)
+   **Total running time of the script:** (0 minutes 2.577 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_b02_fold.py:
@@ -153,16 +153,13 @@ Plot the initial geological model in the y direction without results
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: b02_fold.ipynb <b02_fold.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b02_fold.py <b02_fold.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: b02_fold.ipynb <b02_fold.ipynb>`
 
 
 .. only:: html

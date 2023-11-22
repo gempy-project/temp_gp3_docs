@@ -27,7 +27,7 @@ Importing gempy
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-16
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -67,7 +67,7 @@ Model 9: Parallel flat dipping layers
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-42
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     data_path = os.path.abspath('../..')
@@ -82,7 +82,7 @@ Model 9: Parallel flat dipping layers
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-138
 
-.. code-block:: python3
+.. code-block:: Python
 
     def create_example(name_model, plot_section=True):
         """
@@ -193,7 +193,7 @@ Discordant layering 1
 
 .. GENERATED FROM PYTHON SOURCE LINES 141-144
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 1')
@@ -217,8 +217,10 @@ Discordant layering 1
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 19068.08567237569.
+    Condition number: 1639.3994498405277.
 
 
 .. raw:: html
@@ -293,7 +295,7 @@ Discordant layering 2
 
 .. GENERATED FROM PYTHON SOURCE LINES 147-150
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 2')
@@ -317,8 +319,9 @@ Discordant layering 2
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 56767.66777170984.
 
 
 .. raw:: html
@@ -386,7 +389,7 @@ Discordant layering 3
 
 .. GENERATED FROM PYTHON SOURCE LINES 153-156
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 3')
@@ -410,8 +413,9 @@ Discordant layering 3
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 147199.78698862705.
 
 
 .. raw:: html
@@ -479,7 +483,7 @@ One normal Fault 1
 
 .. GENERATED FROM PYTHON SOURCE LINES 159-162
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 5')
@@ -503,8 +507,10 @@ One normal Fault 1
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 8399.364426033622.
+    Condition number: 190315.66279573357.
 
 
 .. raw:: html
@@ -584,7 +590,7 @@ Fold
 
 .. GENERATED FROM PYTHON SOURCE LINES 165-168
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 6')
@@ -608,8 +614,9 @@ Fold
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 89014.20636012057.
 
 
 .. raw:: html
@@ -677,7 +684,7 @@ Graben
 
 .. GENERATED FROM PYTHON SOURCE LINES 171-174
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 7')
@@ -701,8 +708,11 @@ Graben
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 59.13193003681042.
+    Condition number: 29351.66447265675.
+    Condition number: 336501.2964991108.
 
 
 .. raw:: html
@@ -794,7 +804,7 @@ One normal Fault 2
 
 .. GENERATED FROM PYTHON SOURCE LINES 177-180
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 8')
@@ -818,8 +828,10 @@ One normal Fault 2
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 2576.949018360295.
+    Condition number: 130643.09439710453.
 
 
 .. raw:: html
@@ -899,7 +911,7 @@ Horizontal tilted
 
 .. GENERATED FROM PYTHON SOURCE LINES 183-186
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     create_example('Model 9')
@@ -923,8 +935,9 @@ Horizontal tilted
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.PYTORCH
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
+    Condition number: 147199.78698854955.
 
 
 .. raw:: html
@@ -987,7 +1000,7 @@ Horizontal tilted
 
 .. GENERATED FROM PYTHON SOURCE LINES 187-191
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # generate_all_models(['Model 1', 'Model 2', 'Model 3',
@@ -1003,7 +1016,7 @@ Horizontal tilted
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.602 seconds)
+   **Total running time of the script:** (0 minutes 15.837 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_h08_more_examples.py:
@@ -1012,16 +1025,13 @@ Horizontal tilted
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: h08_more_examples.ipynb <h08_more_examples.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: h08_more_examples.py <h08_more_examples.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: h08_more_examples.ipynb <h08_more_examples.ipynb>`
 
 
 .. only:: html

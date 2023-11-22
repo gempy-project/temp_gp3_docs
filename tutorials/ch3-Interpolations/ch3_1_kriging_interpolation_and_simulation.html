@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3.1: Simple example of kriging in gempy &#8212; GemPy 2023.2.0b1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=270d38c7" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=e5fbc548" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=39c4bfd0"></script>
+    <script src="../../_static/documentation_options.js?v=acace1bb"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -42,13 +42,13 @@
 to download the full example code</p>
 </div>
 <section class="sphx-glr-example-title" id="simple-example-of-kriging-in-gempy">
-<span id="sphx-glr-tutorials-ch3-interpolations-ch3-1-kriging-interpolation-and-simulation-py"></span><h1>3.1: Simple example of kriging in gempy<a class="headerlink" href="#simple-example-of-kriging-in-gempy" title="Permalink to this heading">¶</a></h1>
+<span id="sphx-glr-tutorials-ch3-interpolations-ch3-1-kriging-interpolation-and-simulation-py"></span><h1>3.1: Simple example of kriging in gempy<a class="headerlink" href="#simple-example-of-kriging-in-gempy" title="Link to this heading">¶</a></h1>
 <p>In this notebook it will be shown how to create a kriged or simulated
 field in a simple geological model in gempy. We start by creating a
 simple model with three horizontally layered units, as shown in the
 gempy examples.</p>
 <p>Importing GemPy</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gempy</span> <span class="k">as</span> <span class="nn">gp</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gempy</span> <span class="k">as</span> <span class="nn">gp</span>
 <span class="kn">import</span> <span class="nn">gempy_viewer</span> <span class="k">as</span> <span class="nn">gpv</span>
 
 <span class="c1"># Importing auxiliary libraries</span>
@@ -63,7 +63,7 @@ gempy examples.</p>
 </pre></div>
 </div>
 <p>Creating the model by importing the input data and displaying it:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../&#39;</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;../../&#39;</span><span class="p">)</span>
 
 <a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">:</span> <a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class"><span class="n">gp</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">GeoModel</span></a> <span class="o">=</span> <a href="../../GemPy API/gempy.create_geomodel.html#gempy.create_geomodel" title="gempy.create_geomodel" class="sphx-glr-backref-module-gempy sphx-glr-backref-type-py-function"><span class="n">gp</span><span class="o">.</span><span class="n">create_geomodel</span></a><span class="p">(</span>
     <span class="n">project_name</span><span class="o">=</span><span class="s1">&#39;kriging&#39;</span><span class="p">,</span>
@@ -78,7 +78,7 @@ gempy examples.</p>
 </pre></div>
 </div>
 <p>Setting and ordering the units and series:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><a href="../../GemPy API/gempy.map_stack_to_surfaces.html#gempy.map_stack_to_surfaces" title="gempy.map_stack_to_surfaces" class="sphx-glr-backref-module-gempy sphx-glr-backref-type-py-function"><span class="n">gp</span><span class="o">.</span><span class="n">map_stack_to_surfaces</span></a><span class="p">(</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="../../GemPy API/gempy.map_stack_to_surfaces.html#gempy.map_stack_to_surfaces" title="gempy.map_stack_to_surfaces" class="sphx-glr-backref-module-gempy sphx-glr-backref-type-py-function"><span class="n">gp</span><span class="o">.</span><span class="n">map_stack_to_surfaces</span></a><span class="p">(</span>
     <span class="n">gempy_model</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span>
     <span class="n">mapping_object</span><span class="o">=</span><span class="p">{</span>
         <span class="s2">&quot;Strat_Series&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;rock2&#39;</span><span class="p">,</span> <span class="s1">&#39;rock1&#39;</span><span class="p">),</span>
@@ -126,23 +126,23 @@ gempy examples.</p>
 <br />
 <br /><p>Calculating the model:</p>
 <p>no mesh computed as basically 2D model</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <a href="../../GemPy API/gempy.compute_model.html#gempy.compute_model" title="gempy.compute_model" class="sphx-glr-backref-module-gempy sphx-glr-backref-type-py-function"><span class="n">gp</span><span class="o">.</span><span class="n">compute_model</span></a><span class="p">(</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">sol</span> <span class="o">=</span> <a href="../../GemPy API/gempy.compute_model.html#gempy.compute_model" title="gempy.compute_model" class="sphx-glr-backref-module-gempy sphx-glr-backref-type-py-function"><span class="n">gp</span><span class="o">.</span><span class="n">compute_model</span></a><span class="p">(</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Setting Backend To: AvailableBackends.numpy
-/home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+/home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
   warnings.warn(
 </pre></div>
 </div>
 <p>So here is the very simple, basically 2D model that we created:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span> <span class="n">cell_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span> <span class="n">cell_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">show_data</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_001.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_001.png" alt="Cell Number: 0 Direction: y" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed68e470&gt;
+<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_001.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_001.png" alt="Cell Number: 0 Direction: y" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f28bcdeadd0&gt;
 </pre></div>
 </div>
 <section id="creating-domain">
-<h2>1) Creating domain<a class="headerlink" href="#creating-domain" title="Permalink to this heading">¶</a></h2>
+<h2>1) Creating domain<a class="headerlink" href="#creating-domain" title="Link to this heading">¶</a></h2>
 <p>Let us assume we have a couple of measurements in a domain of interest
 within our model. In our case the unit of interest is the central rock
 layer (rock1). In the kriging module we can define the domain by
@@ -150,12 +150,12 @@ handing over a number of surfaces by id - in this case the id of rock1
 is 2. In addition we define four input data points in cond_data, each
 defined by x,y,z coordinate and a measurement value.</p>
 <p>conditioning data (data measured at locations)</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cond_data</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">900</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cond_data</span></a> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([[</span><span class="mi">100</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">900</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                       <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">550</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">300</span><span class="p">,</span> <span class="mf">.5</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
 </pre></div>
 </div>
 <p>creating a domain object from the gempy solution, a defined domain conditioning data</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">domain</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">Domain</span><span class="p">(</span>
     <span class="n">model_solutions</span><span class="o">=</span><span class="n">sol</span><span class="p">,</span>
     <span class="n">transform</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="o">.</span><span class="n">transform</span><span class="p">,</span>
     <span class="n">domain</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
@@ -165,30 +165,30 @@ defined by x,y,z coordinate and a measurement value.</p>
 </div>
 </section>
 <section id="creating-a-variogram-model">
-<h2>2) Creating a variogram model<a class="headerlink" href="#creating-a-variogram-model" title="Permalink to this heading">¶</a></h2>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">variogram_model</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">VariogramModel</span><span class="p">(</span>
+<h2>2) Creating a variogram model<a class="headerlink" href="#creating-a-variogram-model" title="Link to this heading">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">variogram_model</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">VariogramModel</span><span class="p">(</span>
     <span class="n">theoretical_model</span><span class="o">=</span><span class="s1">&#39;exponential&#39;</span><span class="p">,</span>
     <span class="n">range_</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
     <span class="n">sill</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.var.html#numpy.var" title="numpy.var" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">var</span></a><span class="p">(</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cond_data</span></a><span class="p">[:,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">variogram_model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">type_</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">show_parameters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">variogram_model</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">type_</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">show_parameters</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_002.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_002.png" alt="Models of spatial correlation" class = "sphx-glr-single-img"/></section>
 <section id="kriging-interpolation">
-<h2>3) Kriging interpolation<a class="headerlink" href="#kriging-interpolation" title="Permalink to this heading">¶</a></h2>
+<h2>3) Kriging interpolation<a class="headerlink" href="#kriging-interpolation" title="Link to this heading">¶</a></h2>
 <p>In the following we define an object called kriging_model and set all
 input parameters. Finally we generate the kriged field.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriging_solution</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">create_kriged_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">variogram_model</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">kriging_solution</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">create_kriged_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">variogram_model</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The result of our calculation is saved in the following dataframe,
 containing an estimated value and the kriging variance for each point in
 the grid:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">kriging_solution</span><span class="o">.</span><span class="n">results_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">kriging_solution</span><span class="o">.</span><span class="n">results_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
@@ -265,7 +265,7 @@ the grid:</p>
 <br />
 <br /><p>It is also possible to plot the results in cross section similar to the
 way gempy models are plotted.</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gempy_viewer.modules.plot_2d.visualization_2d</span> <span class="kn">import</span> <span class="n">Plot2D</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gempy_viewer.modules.plot_2d.visualization_2d</span> <span class="kn">import</span> <span class="n">Plot2D</span>
 
 <span class="n">plot_2d</span><span class="p">:</span> <span class="n">Plot2D</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span>
@@ -283,7 +283,7 @@ way gempy models are plotted.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_003.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_003.png" alt="Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d_both</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
+<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_003.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_003.png" alt="Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d_both</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span>
     <span class="n">cell_number</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">show_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -302,14 +302,14 @@ way gempy models are plotted.</p>
 </div>
 <img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_004.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_004.png" alt="Kriging interpolation: Estimated values, Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/></section>
 <section id="simulated-field">
-<h2>4) Simulated field<a class="headerlink" href="#simulated-field" title="Permalink to this heading">¶</a></h2>
+<h2>4) Simulated field<a class="headerlink" href="#simulated-field" title="Link to this heading">¶</a></h2>
 <p>Based on the same objects (domain and varigoram model) also a simulated
 field (stationary Gaussian Field) can be generated. A Sequential
 Gaussian Simulation approach is applied in this module:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">create_gaussian_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">variogram_model</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span> <span class="o">=</span> <span class="n">kriging</span><span class="o">.</span><span class="n">create_gaussian_field</span><span class="p">(</span><span class="n">domain</span><span class="p">,</span> <span class="n">variogram_model</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span><span class="o">.</span><span class="n">results_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span><span class="o">.</span><span class="n">results_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
@@ -384,7 +384,7 @@ Gaussian Simulation approach is applied in this module:</p>
 </div>
 </div>
 <br />
-<br /><div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span><span class="o">.</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;estimated value&#39;</span><span class="p">]</span>
+<br /><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">solution_sim</span><span class="o">.</span><span class="n">results_df</span><span class="p">[</span><span class="s1">&#39;estimated value&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>256    3.687710
@@ -401,7 +401,7 @@ Gaussian Simulation approach is applied in this module:</p>
 Name: estimated value, Length: 1024, dtype: float64
 </pre></div>
 </div>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d</span><span class="p">:</span> <span class="n">Plot2D</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d</span><span class="p">:</span> <span class="n">Plot2D</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span>
     <span class="n">cell_number</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">show_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -417,7 +417,7 @@ Name: estimated value, Length: 1024, dtype: float64
 <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_005.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_005.png" alt="Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d_both</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
+<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_005.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_005.png" alt="Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">plot_2d_both</span> <span class="o">=</span> <span class="n">gpv</span><span class="o">.</span><span class="n">plot_2d</span><span class="p">(</span>
     <span class="n">model</span><span class="o">=</span><a href="../../Modeling Classes/gempy.core.data.GeoModel.html#gempy.core.data.GeoModel" title="gempy.core.data.GeoModel" class="sphx-glr-backref-module-gempy-core-data sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">geo_data</span></a><span class="p">,</span>
     <span class="n">cell_number</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">show_data</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
@@ -435,13 +435,13 @@ Name: estimated value, Length: 1024, dtype: float64
 <span class="c1"># sphinx_gallery_thumbnail_number = 3</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_006.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_006.png" alt="Kriging interpolation: Estimated values, Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.342 seconds)</p>
+<img src="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_006.png" srcset="../../_images/sphx_glr_ch3_1_kriging_interpolation_and_simulation_006.png" alt="Kriging interpolation: Estimated values, Kriging interpolation: Estimated values" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 12.384 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorials-ch3-interpolations-ch3-1-kriging-interpolation-and-simulation-py">
-<div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/a25d46b5238954e8328a5fad9f74e7a4/ch3_1_kriging_interpolation_and_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">ch3_1_kriging_interpolation_and_simulation.py</span></code></a></p>
-</div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/43ceb013df1b49aef0cf18d8a35c19b9/ch3_1_kriging_interpolation_and_simulation.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">ch3_1_kriging_interpolation_and_simulation.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/a25d46b5238954e8328a5fad9f74e7a4/ch3_1_kriging_interpolation_and_simulation.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">ch3_1_kriging_interpolation_and_simulation.py</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -538,7 +538,7 @@ Name: estimated value, Length: 1024, dtype: float64
       &copy;2017-2023, Gempy Developers.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
       |

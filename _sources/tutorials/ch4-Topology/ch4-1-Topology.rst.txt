@@ -23,7 +23,7 @@ Chapter 4: Analyzing Geomodel Topology
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-17
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -56,7 +56,7 @@ order the formations (stratigraphic pile).
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-55
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = os.path.abspath('../../')
 
@@ -100,7 +100,7 @@ order the formations (stratigraphic pile).
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-59
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[5])
 
@@ -119,7 +119,7 @@ order the formations (stratigraphic pile).
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7fb1a589c730>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f2900dd1c90>
 
 
 
@@ -144,7 +144,7 @@ several useful outputs:
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-81
 
-.. code-block:: python3
+.. code-block:: Python
 
     edges, centroids = tp.compute_topology(geo_model)
 
@@ -166,7 +166,7 @@ geobody (or node) labels:
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     edges
 
@@ -193,7 +193,7 @@ coordinates:
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-102
 
-.. code-block:: python3
+.. code-block:: Python
 
     centroids
 
@@ -228,7 +228,7 @@ Visualizing topology
 
 .. GENERATED FROM PYTHON SOURCE LINES 118-124
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_topology(
         regular_grid=geo_model.grid.regular_grid,
@@ -250,7 +250,7 @@ Visualizing topology
 
 .. GENERATED FROM PYTHON SOURCE LINES 125-133
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot_2d: Plot2D = gpv.plot_2d(geo_model, cell_number=[5], show=False)
     gpv.plot_topology(
@@ -283,7 +283,7 @@ adjacency graph:
 
 .. GENERATED FROM PYTHON SOURCE LINES 142-145
 
-.. code-block:: python3
+.. code-block:: Python
 
     M = tp.get_adjacency_matrix(geo_model, edges, centroids)
     print(M)
@@ -312,7 +312,7 @@ adjacency graph:
 
 .. GENERATED FROM PYTHON SOURCE LINES 146-149
 
-.. code-block:: python3
+.. code-block:: Python
 
     tp.plot_adjacency_matrix(geo_model, M)
 
@@ -345,7 +345,7 @@ Mapping node id's back to lithology / surface id's:
 
 .. GENERATED FROM PYTHON SOURCE LINES 163-167
 
-.. code-block:: python3
+.. code-block:: Python
 
     lith_lot = tp.get_lot_node_to_lith_id(geo_model, centroids)
     lith_lot
@@ -371,7 +371,7 @@ Figuring out which nodes are in which fault block:
 
 .. GENERATED FROM PYTHON SOURCE LINES 172-176
 
-.. code-block:: python3
+.. code-block:: Python
 
     fault_lot = tp.get_lot_node_to_fault_block(geo_model, centroids)
     fault_lot
@@ -398,7 +398,7 @@ id's:
 
 .. GENERATED FROM PYTHON SOURCE LINES 182-185
 
-.. code-block:: python3
+.. code-block:: Python
 
     tp.get_lot_lith_to_node_id(lith_lot)
 
@@ -428,7 +428,7 @@ sphinx_gallery_thumbnail_number = 4
 
 .. GENERATED FROM PYTHON SOURCE LINES 192-193
 
-.. code-block:: python3
+.. code-block:: Python
 
     dedges, dcentroids = tp.get_detailed_labels(geo_model, edges, centroids)
 
@@ -440,7 +440,7 @@ sphinx_gallery_thumbnail_number = 4
 
 .. GENERATED FROM PYTHON SOURCE LINES 194-202
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot_2d: Plot2D = gpv.plot_2d(geo_model, cell_number=[5], show=False)
     gpv.plot_topology(
@@ -464,7 +464,7 @@ sphinx_gallery_thumbnail_number = 4
 
 .. GENERATED FROM PYTHON SOURCE LINES 203-205
 
-.. code-block:: python3
+.. code-block:: Python
 
     dedges
 
@@ -477,13 +477,13 @@ sphinx_gallery_thumbnail_number = 4
  .. code-block:: none
 
 
-    {('4_0', '6_1'), ('3_0', '5_1'), ('2_0', '3_1'), ('5_1', '6_1'), ('2_0', '2_1'), ('4_0', '5_1'), ('2_0', '4_1'), ('5_0', '6_1'), ('3_0', '4_0'), ('5_0', '6_0'), ('2_1', '3_1'), ('3_1', '4_1'), ('4_1', '5_1'), ('3_0', '4_1'), ('2_0', '3_0'), ('6_0', '6_1'), ('4_0', '5_0')}
+    {('4_0', '5_1'), ('4_0', '5_0'), ('4_0', '6_1'), ('6_0', '6_1'), ('3_1', '4_1'), ('4_1', '5_1'), ('2_0', '3_0'), ('5_0', '6_1'), ('3_0', '5_1'), ('2_1', '3_1'), ('3_0', '4_1'), ('2_0', '3_1'), ('2_0', '2_1'), ('5_0', '6_0'), ('5_1', '6_1'), ('2_0', '4_1'), ('3_0', '4_0')}
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 206-209
 
-.. code-block:: python3
+.. code-block:: Python
 
     dcentroids
 
@@ -516,7 +516,7 @@ use of the detailed labeling and the ``check_adjacency`` function:
 
 .. GENERATED FROM PYTHON SOURCE LINES 222-225
 
-.. code-block:: python3
+.. code-block:: Python
 
     tp.check_adjacency(dedges, "5_1", "3_0")
 
@@ -542,7 +542,7 @@ We can also check all geobodies that are adjacent to the purple layer
 
 .. GENERATED FROM PYTHON SOURCE LINES 231-233
 
-.. code-block:: python3
+.. code-block:: Python
 
     tp.get_adjacencies(dedges, "5_1")
 
@@ -555,14 +555,14 @@ We can also check all geobodies that are adjacent to the purple layer
  .. code-block:: none
 
 
-    {'4_0', '6_1', '3_0', '4_1'}
+    {'4_1', '4_0', '6_1', '3_0'}
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.650 seconds)
+   **Total running time of the script:** (0 minutes 0.673 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch4-Topology_ch4-1-Topology.py:
@@ -571,16 +571,13 @@ We can also check all geobodies that are adjacent to the purple layer
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch4-1-Topology.ipynb <ch4-1-Topology.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch4-1-Topology.py <ch4-1-Topology.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch4-1-Topology.ipynb <ch4-1-Topology.ipynb>`
 
 
 .. only:: html

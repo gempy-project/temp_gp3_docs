@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../../../../">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>gempy.core.data.grid &#8212; GemPy 2023.2.0b1 documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b76e3c8a" />
+    <title>gempy.core.data.grid &#8212; GemPy 2023.2.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=270d38c7" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery.css?v=61a4c737" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=e5fbc548" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js?v=39c4bfd0"></script>
+    <script src="../../../../_static/documentation_options.js?v=953b8078"></script>
     <script src="../../../../_static/doctools.js?v=888ff710"></script>
-    <script src="../../../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -53,7 +53,9 @@
 
 
 
-<div class="viewcode-block" id="Grid"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid">[docs]</a><span class="k">class</span> <span class="nc">Grid</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid">[docs]</a>
+<span class="k">class</span> <span class="nc">Grid</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Class to generate grids.</span>
 
 <span class="sd">    This class is used to create points to evaluate the geological model. </span>
@@ -87,7 +89,9 @@
 <span class="sd">        gravity_grid (:class:`gempy.core.grid_modules.grid_types.Gravity`)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="Grid.__init__"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid.__init__">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.__init__">[docs]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">values_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
@@ -114,6 +118,7 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">update_grid_values</span><span class="p">()</span></div>
 
+
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">grid_summary</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">g_type</span><span class="si">}</span><span class="s2"> (active: </span><span class="si">{</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">g_type</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;_grid_active&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">g_type</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;_grid&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="si">}</span><span class="s2"> points&quot;</span>
                         <span class="k">for</span> <span class="n">g_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_types</span><span class="p">]</span>
@@ -124,7 +129,9 @@
     <span class="k">def</span> <span class="nf">active_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_types</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">active_grids_bool</span><span class="p">]</span>
         
-<div class="viewcode-block" id="Grid.create_regular_grid"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_regular_grid">[docs]</a>    <span class="k">def</span> <span class="nf">create_regular_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">set_active</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid.create_regular_grid">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_regular_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_regular_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">set_active</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a new regular grid and activate it.</span>
 
@@ -139,8 +146,10 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="s1">&#39;regular&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">regular_grid</span></div>
 
-    <span class="c1"># ? DEP?</span>
-<div class="viewcode-block" id="Grid.create_custom_grid_"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_custom_grid_">[docs]</a>    <span class="k">def</span> <span class="nf">create_custom_grid_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">custom_grid</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Grid.create_custom_grid">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_custom_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_custom_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">custom_grid</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set a new regular grid and activate it.</span>
 
@@ -151,9 +160,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">custom_grid</span> <span class="o">=</span> <span class="n">grid_types</span><span class="o">.</span><span class="n">CustomGrid</span><span class="p">(</span><span class="n">custom_grid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="s1">&#39;custom&#39;</span><span class="p">)</span></div>
 
+
     <span class="c1"># ! (miguel, Sep 2023) This has to change a lot</span>
-    <span class="c1"># ? DEP? </span>
-<div class="viewcode-block" id="Grid.create_topography_"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_topography_">[docs]</a>    <span class="k">def</span> <span class="nf">create_topography_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid.create_topography">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_topography">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_topography</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s1">&#39;random&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a topography grid and activate it.</span>
 
 <span class="sd">        Args:</span>
@@ -205,19 +216,24 @@
 
         <span class="bp">self</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="s1">&#39;topography&#39;</span><span class="p">)</span></div>
 
+
     <span class="k">def</span> <span class="nf">create_section_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">section_dict</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sections</span> <span class="o">=</span> <span class="n">grid_types</span><span class="o">.</span><span class="n">Sections</span><span class="p">(</span><span class="n">regular_grid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">regular_grid</span><span class="p">,</span> <span class="n">section_dict</span><span class="o">=</span><span class="n">section_dict</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="s1">&#39;sections&#39;</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span>
 
-    <span class="c1"># ? DEP?</span>
-<div class="viewcode-block" id="Grid.create_centered_grid"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_centered_grid">[docs]</a>    <span class="k">def</span> <span class="nf">create_centered_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">centers</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid.create_centered_grid">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.create_centered_grid">[docs]</a>
+    <span class="k">def</span> <span class="nf">create_centered_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">centers</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize gravity grid. Deactivate the rest of the grids&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">centered_grid</span> <span class="o">=</span> <span class="n">grid_types</span><span class="o">.</span><span class="n">CenteredGrid</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">resolution</span><span class="p">)</span>
         <span class="c1"># self.active_grids = np.zeros(4, dtype=bool)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="s1">&#39;centered&#39;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="Grid.deactivate_all_grids"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.deactivate_all_grids">[docs]</a>    <span class="k">def</span> <span class="nf">deactivate_all_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+<div class="viewcode-block" id="Grid.deactivate_all_grids">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.deactivate_all_grids">[docs]</a>
+    <span class="k">def</span> <span class="nf">deactivate_all_grids</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Deactivates the active grids array</span>
 <span class="sd">        :return:</span>
@@ -226,7 +242,10 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">update_grid_values</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_grids_bool</span></div>
 
-<div class="viewcode-block" id="Grid.set_active"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.set_active">[docs]</a>    <span class="k">def</span> <span class="nf">set_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
+
+<div class="viewcode-block" id="Grid.set_active">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.set_active">[docs]</a>
+    <span class="k">def</span> <span class="nf">set_active</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">]):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Set active a given or several grids</span>
 <span class="sd">        Args:</span>
@@ -240,13 +259,16 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">update_grid_values</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_grids_bool</span></div>
 
+
     <span class="k">def</span> <span class="nf">set_inactive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">where</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_types</span> <span class="o">==</span> <span class="n">grid_name</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">active_grids_bool</span> <span class="o">*=</span> <span class="o">~</span><span class="n">where</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">update_grid_values</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">active_grids_bool</span>
 
-<div class="viewcode-block" id="Grid.update_grid_values"><a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.update_grid_values">[docs]</a>    <span class="k">def</span> <span class="nf">update_grid_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="Grid.update_grid_values">
+<a class="viewcode-back" href="../../../../Modeling%20Classes/gempy.core.data.Grid.html#gempy.core.data.Grid.update_grid_values">[docs]</a>
+    <span class="k">def</span> <span class="nf">update_grid_values</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Copy XYZ coordinates from each specific grid to Grid.values for those which are active.</span>
 
@@ -271,6 +293,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span></div>
 
+
     <span class="k">def</span> <span class="nf">get_grid_args</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grid_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">grid_name</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">,</span> <span class="s1">&#39;Only one grid type can be retrieved&#39;</span>
         <span class="k">assert</span> <span class="n">grid_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_types</span><span class="p">,</span> <span class="s1">&#39;possible grid types are &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">grid_types</span><span class="p">)</span>
@@ -288,6 +311,7 @@
         <span class="n">l0</span><span class="p">,</span> <span class="n">l1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_grid_args</span><span class="p">(</span><span class="s1">&#39;sections&#39;</span><span class="p">)</span>
         <span class="n">where</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">names</span> <span class="o">==</span> <span class="n">section_name</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="k">return</span> <span class="n">l0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">length</span><span class="p">[</span><span class="n">where</span><span class="p">],</span> <span class="n">l0</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">length</span><span class="p">[</span><span class="n">where</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span></div>
+
 </pre></div>
 
           </div>
@@ -326,7 +350,7 @@
 <p class="caption" role="heading"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../tutorials/index.html">GemPy Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../examples/index.html">Simple geometries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../examples/index.html">Examples</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
 <ul>
@@ -369,7 +393,7 @@
       &copy;2017-2023, Gempy Developers.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
     </div>

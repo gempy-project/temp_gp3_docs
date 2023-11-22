@@ -23,7 +23,7 @@ Claudius
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-18
 
-.. code-block:: python3
+.. code-block:: Python
 
     import sys, os
 
@@ -53,7 +53,7 @@ we can directly tidy the data in gempy style:
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-58
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     data_path = os.path.abspath('../../data/input_data/Claudius')
@@ -175,7 +175,7 @@ we can directly tidy the data in gempy style:
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-61
 
-.. code-block:: python3
+.. code-block:: Python
 
     surface_points.dtypes
 
@@ -205,7 +205,7 @@ How many points are per surface
 
 .. GENERATED FROM PYTHON SOURCE LINES 66-68
 
-.. code-block:: python3
+.. code-block:: Python
 
     surface_points.groupby('surface').count()
 
@@ -305,7 +305,7 @@ Now we do the same with the orientations:
 
 .. GENERATED FROM PYTHON SOURCE LINES 73-92
 
-.. code-block:: python3
+.. code-block:: Python
 
     dfs = []
 
@@ -433,7 +433,7 @@ Now we do the same with the orientations:
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-95
 
-.. code-block:: python3
+.. code-block:: Python
 
     orientations.dtypes
 
@@ -476,7 +476,7 @@ Number of voxels:
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-159
 
-.. code-block:: python3
+.. code-block:: Python
 
     np.array([38, 55, 30]).prod()
 
@@ -538,8 +538,8 @@ Number of voxels:
 
  .. code-block:: none
 
-    {'grid': <gempy.core.data.grid.Grid object at 0x7f549e39af80>,
-     'interpolation_options': InterpolationOptions(kernel_options={'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f54fd6fbd90>, derivative_div_r=<function cubic_function_p_div_r at 0x7f54fd6fbe20>, second_derivative=<function cubic_function_a at 0x7f54fd6fbeb0>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}, number_octree_levels=5, current_octree_level=0, compute_scalar_gradient=False, mesh_extraction=True, mesh_extraction_masking_options=MeshExtractionMaskingOptions.INTERSECT, mesh_extraction_fancy=True, debug=True, debug_water_tight=False, _number_octree_levels_surface=4),
+    {'grid': <gempy.core.data.grid.Grid object at 0x7f08ac9d3bb0>,
+     'interpolation_options': InterpolationOptions(kernel_options={'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f090b7b1cf0>, derivative_div_r=<function cubic_function_p_div_r at 0x7f090b7b1d80>, second_derivative=<function cubic_function_a at 0x7f090b7b1e10>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}, number_octree_levels=5, current_octree_level=0, compute_scalar_gradient=False, mesh_extraction=True, mesh_extraction_masking_options=MeshExtractionMaskingOptions.INTERSECT, mesh_extraction_fancy=True, debug=True, debug_water_tight=False, sigmoid_slope=50000, _number_octree_levels_surface=4),
      'meta': GeoModelMeta(name='Claudius',
                           creation_date=None,
                           last_modification_date=None,
@@ -604,7 +604,7 @@ the conditional number of the matrix:
 
 .. GENERATED FROM PYTHON SOURCE LINES 165-167
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.modify_surface_points(geo_model, nugget=0.01)
 
@@ -681,7 +681,7 @@ direction by calling the following:
 
 .. GENERATED FROM PYTHON SOURCE LINES 173-175
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.modify_orientations(geo_model, polarity=-1)
 
@@ -759,7 +759,7 @@ points availablle:
 
 .. GENERATED FROM PYTHON SOURCE LINES 180-194
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     element = geo_model.structural_frame.get_element_by_name("Claudius_fault")
@@ -842,7 +842,7 @@ points availablle:
 
 .. GENERATED FROM PYTHON SOURCE LINES 195-197
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, direction='y')
 
@@ -860,7 +860,7 @@ points availablle:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549e399540>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08acd4f0d0>
 
 
 
@@ -871,7 +871,7 @@ We will need to separate with surface belong to each series:
 
 .. GENERATED FROM PYTHON SOURCE LINES 200-209
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     gp.map_stack_to_surfaces(
@@ -961,7 +961,7 @@ So far we did not specify which series/faults are actula faults:
 
 .. GENERATED FROM PYTHON SOURCE LINES 214-221
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_is_fault(
         frame=geo_model.structural_frame,
@@ -1044,7 +1044,7 @@ So far we did not specify which series/faults are actula faults:
 
 .. GENERATED FROM PYTHON SOURCE LINES 222-232
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.interpolation_options.kernel_options.range = 1
     gp.compute_model(
@@ -1067,22 +1067,6 @@ So far we did not specify which series/faults are actula faults:
     Setting Backend To: AvailableBackends.numpy
     /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
-    A size: (573, 573)
-    [KeOps] Generating code for formula Sum_Reduction((10*((((((Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(3,3,1)))*-Sum((Var(0,3,0)-Var(1,3,1))*(Var(4,3,0)*Var(5,3,1))))/(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2+Var(6,1,2)))*(-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)+(7*(((9*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5)-20*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))+15*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))-4))/2)-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)*Sum(Var(2,3,0)*Var(5,3,1)))+(Step(Var(10,1,2)-(Var(8,1,0)-Var(9,1,1))**2)*Var(11,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(4*(((((((1-7*Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),7))/4)-((((1-7*Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),7))/4))-((((1-7*Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),7))/4))+((((1-7*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),7))/4))+(Step(Var(16,1,2)-(Var(14,1,0)-Var(15,1,1))**2)*Var(17,1,2))*-(Sum(Var(2,3,0)*Var(5,3,1))-1)))+2*(-(Sum((Var(12,3,0)-Var(13,3,1))*(Var(2,3,0)*Var(18,3,1)))-Sum((Var(12,3,0)-Var(13,3,1))*(Var(19,3,0)*Var(5,3,1))))*(((Var(20,1,2)+(105*Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),5))/4)+(Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(21,3,1)))-Sum((Var(0,3,0)-Var(1,3,1))*(Var(22,3,0)*Var(5,3,1))))*(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)))+(-Sum(Var(23,2,0)*(Var(24,2,1)+1))*(4*(Sum(Var(25,3,0)*Var(26,3,1))*Sum(Var(27,3,0)*Var(28,3,1))-Sum(Var(29,3,0)*Var(30,3,1))*Sum(Var(31,3,0)*Var(32,3,1)))+2*(Sum(Var(33,3,0)*Var(34,3,1))-Sum(Var(35,3,0)*Var(36,3,1))))+Sum(Var(23,2,0)*(Var(24,2,1)+1))*((Sum(Var(37,3,0)*Var(38,3,1))+2*Sum(Var(39,3,0)*Var(40,3,1)))+2*(Sum(Var(41,3,0)*Var(42,3,1))*-(-2+Sum(Var(43,3,0)*Var(44,3,1)))))))*Var(45,1,1),0) ... OK
-    [pyKeOps] Compiling pykeops cpp d4e881f26c module ... OK
-    CG iterations: 100
-    [KeOps] Generating code for formula Sum_Reduction((10*(-4*(((((1-7*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),7))/4)-((((1-7*Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2))**2)+(35*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),7))/4))+2*(Sum((Var(2,3,1)-Var(3,3,0))*(Var(4,3,1)*Var(5,3,0)))*(((Var(6,1,2)+(105*Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),5))/4)))+Sum(Var(7,2,1)*(Var(8,2,0)+1))*(2*Sum(Var(9,3,1)*Var(10,3,0))+4*(Sum(Var(11,3,1)*Var(12,3,0))*Sum(Var(13,3,1)*Var(14,3,0)))))*Var(15,1,1),0) ... OK
-    [pyKeOps] Compiling pykeops cpp 3be7a4402d module ... OK
-    A size: (98, 98)
-    CG iterations: 16
-    A size: (241, 241)
-    [KeOps] Generating code for formula Sum_Reduction(((10*((((((Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(3,3,1)))*-Sum((Var(0,3,0)-Var(1,3,1))*(Var(4,3,0)*Var(5,3,1))))/(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2+Var(6,1,2)))*(-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)+(7*(((9*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5)-20*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))+15*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))-4))/2)-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)*Sum(Var(2,3,0)*Var(5,3,1)))+(Step(Var(10,1,2)-(Var(8,1,0)-Var(9,1,1))**2)*Var(11,1,2))*Sum(Var(2,3,0)*Var(5,3,1)))+(4*(((((((1-7*Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),7))/4)-((((1-7*Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(12,3,0)-Var(1,3,1))**2)),7))/4))-((((1-7*Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(13,3,1))**2)),7))/4))+((((1-7*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),7))/4))+(Step(Var(16,1,2)-(Var(14,1,0)-Var(15,1,1))**2)*Var(17,1,2))*-(Sum(Var(2,3,0)*Var(5,3,1))-1)))+2*(-(Sum((Var(12,3,0)-Var(13,3,1))*(Var(2,3,0)*Var(18,3,1)))-Sum((Var(12,3,0)-Var(13,3,1))*(Var(19,3,0)*Var(5,3,1))))*(((Var(20,1,2)+(105*Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(12,3,0)-Var(13,3,1))**2)),5))/4)+(Sum((Var(0,3,0)-Var(1,3,1))*(Var(2,3,0)*Var(21,3,1)))-Sum((Var(0,3,0)-Var(1,3,1))*(Var(22,3,0)*Var(5,3,1))))*(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,0)-Var(1,3,1))**2)),5))/4)))+(-Sum(Var(23,2,0)*(Var(24,2,1)+1))*(4*(Sum(Var(25,3,0)*Var(26,3,1))*Sum(Var(27,3,0)*Var(28,3,1))-Sum(Var(29,3,0)*Var(30,3,1))*Sum(Var(31,3,0)*Var(32,3,1)))+2*(Sum(Var(33,3,0)*Var(34,3,1))-Sum(Var(35,3,0)*Var(36,3,1))))+Sum(Var(23,2,0)*(Var(24,2,1)+1))*((Sum(Var(37,3,0)*Var(38,3,1))+2*Sum(Var(39,3,0)*Var(40,3,1)))+2*(Sum(Var(41,3,0)*Var(42,3,1))*-(-2+Sum(Var(43,3,0)*Var(44,3,1)))))))+Sum(Var(45,2,0)*(Var(46,2,1)+1))*((Sum(Var(47,1,0)*Var(48,1,1))-Sum(Var(49,1,0)*Var(50,1,1)))+Var(51,1,2)))*Var(52,1,1),0) ... OK
-    [pyKeOps] Compiling pykeops cpp 55cd1813f6 module ... OK
-    CG iterations: 100
-    [KeOps] Generating code for formula Sum_Reduction(((10*(-4*(((((1-7*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2))**2)+(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),7))/4)-((((1-7*Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2))**2)+(35*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),3))/4)-(7*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),5))/2)+(3*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),7))/4))+2*(Sum((Var(2,3,1)-Var(3,3,0))*(Var(4,3,1)*Var(5,3,0)))*(((Var(6,1,2)+(105*Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(2,3,1)-Var(3,3,0))**2)),5))/4)))+Sum(Var(7,2,1)*(Var(8,2,0)+1))*(2*Sum(Var(9,3,1)*Var(10,3,0))+4*(Sum(Var(11,3,1)*Var(12,3,0))*Sum(Var(13,3,1)*Var(14,3,0)))))+Sum(Var(15,2,1)*(Var(16,2,0)+1))*Sum(Var(17,1,1)*Var(18,1,0)))*Var(19,1,1),0) ... OK
-    [pyKeOps] Compiling pykeops cpp 23a6a13dd7 module ... OK
-    [KeOps] Generating code for formula Sum_Reduction((10*((((Sum((Var(0,3,1)-Var(1,3,0))*(Var(2,3,1)*Var(3,3,0)))*-Sum((Var(0,3,1)-Var(1,3,0))*(Var(4,3,1)*Var(5,3,0))))/(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2))**2+Var(6,1,2)))*(-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/4)+(7*(((9*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5)-20*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))+15*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)))-4))/2)-(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/4)*Sum(Var(8,3,1)*Var(5,3,0)))+-2*(Sum((Var(0,3,1)-Var(1,3,0))*(Var(9,3,1)*Var(10,3,0)))*(((Var(7,1,2)+(105*Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(0,3,1)-Var(1,3,0))**2)),5))/4)-Sum((Var(11,3,1)-Var(12,3,0))*(Var(9,3,1)*Var(10,3,0)))*(((Var(13,1,2)+(105*Sqrt(Sum((Var(11,3,1)-Var(12,3,0))**2)))/4)-(35*Pow(Sqrt(Sum((Var(11,3,1)-Var(12,3,0))**2)),3))/2)+(21*Pow(Sqrt(Sum((Var(11,3,1)-Var(12,3,0))**2)),5))/4)))+Sum(Var(14,2,1)*(Var(15,2,0)+1))*((Sum(Var(16,3,1)*Var(17,3,0))+2*Sum(Var(18,3,1)*Var(19,3,0)))+2*(Sum(Var(20,3,1)*Var(21,3,0))*Sum(Var(22,3,1)*Var(17,3,0)))))*Var(23,1,1),0) ... OK
-    [pyKeOps] Compiling pykeops cpp de789e3e6d module ... OK
 
 
 .. raw:: html
@@ -1095,7 +1079,7 @@ So far we did not specify which series/faults are actula faults:
 
 .. GENERATED FROM PYTHON SOURCE LINES 233-237
 
-.. code-block:: python3
+.. code-block:: Python
 
     sect = ['mid']
 
@@ -1115,13 +1099,13 @@ So far we did not specify which series/faults are actula faults:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f548e9b1a80>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08ac70d5a0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 238-240
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=sect, show_data=True, direction='x')
 
@@ -1139,13 +1123,13 @@ So far we did not specify which series/faults are actula faults:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f548e9b22f0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f514e260>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 241-245
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[28], series_n=0, direction='y', show_scalar=True)
     gpv.plot_2d(geo_model, cell_number=[28], series_n=1, direction='y', show_scalar=True)
@@ -1184,13 +1168,13 @@ So far we did not specify which series/faults are actula faults:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549e6de890>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f2031930>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 246-248
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, cell_number=[28], show_data=True, direction='y')
 
@@ -1208,13 +1192,13 @@ So far we did not specify which series/faults are actula faults:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f549f0782b0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f546ca90>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 249-252
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # sphinx_gallery_thumbnail_number = 8
@@ -1233,14 +1217,14 @@ So far we did not specify which series/faults are actula faults:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f549ef65060>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f2031930>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  16.534 seconds)
+   **Total running time of the script:** (2 minutes 5.939 seconds)
 
 
 .. _sphx_glr_download_examples_real_Claudius.py:
@@ -1249,16 +1233,13 @@ So far we did not specify which series/faults are actula faults:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: Claudius.ipynb <Claudius.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: Claudius.py <Claudius.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: Claudius.ipynb <Claudius.ipynb>`
 
 
 .. only:: html

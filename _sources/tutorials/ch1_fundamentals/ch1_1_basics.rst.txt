@@ -23,7 +23,7 @@
 
 .. GENERATED FROM PYTHON SOURCE LINES 6-8
 
-.. code-block:: python3
+.. code-block:: Python
 
     import numpy as np
 
@@ -41,7 +41,7 @@ Importing Necessary Libraries
 
 .. GENERATED FROM PYTHON SOURCE LINES 11-14
 
-.. code-block:: python3
+.. code-block:: Python
 
     import gempy as gp
     import gempy_viewer as gpv
@@ -91,7 +91,7 @@ computational costs.
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-65
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = 'https://raw.githubusercontent.com/cgre-aachen/gempy_data/master/'
 
@@ -134,7 +134,7 @@ computational costs.
 
 .. GENERATED FROM PYTHON SOURCE LINES 73-77
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # The input data can be reviewed using the properties `surface_points` and `orientations`. However, note that at this point,
@@ -149,7 +149,7 @@ computational costs.
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-80
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.surface_points
 
@@ -161,14 +161,14 @@ computational costs.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>X</th><th>Y</th><th>Z</th><th>id</th><th>nugget</th></tr><tr><td>700.00</td><td>1000.00</td><td>300.00</td><td>23987484</td><td>0.00</td></tr><tr><td>600.00</td><td>1000.00</td><td>200.00</td><td>23987484</td><td>0.00</td></tr><tr><td>500.00</td><td>1000.00</td><td>100.00</td><td>23987484</td><td>0.00</td></tr><tr><td>1000.00</td><td>1000.00</td><td>600.00</td><td>23987484</td><td>0.00</td></tr><tr><td>1100.00</td><td>1000.00</td><td>700.00</td><td>23987484</td><td>0.00</td></tr><tr><td>1000.00</td><td>50.00</td><td>350.00</td><td>104907733</td><td>0.00</td></tr><tr><td>1000.00</td><td>150.00</td><td>333.33</td><td>104907733</td><td>0.00</td></tr><tr><td>1000.00</td><td>300.00</td><td>333.33</td><td>104907733</td><td>0.00</td></tr><tr><td>1000.00</td><td>500.00</td><td>366.67</td><td>104907733</td><td>0.00</td></tr><tr><td>1000.00</td><td>1000.00</td><td>433.33</td><td>104907733</td><td>0.00</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>1100.00</td><td>1700.00</td><td>473.33</td><td>483694126</td><td>0.00</td></tr><tr><td>1100.00</td><td>1950.00</td><td>490.00</td><td>483694126</td><td>0.00</td></tr><tr><td>0.00</td><td>1000.00</td><td>433.33</td><td>483694126</td><td>0.00</td></tr><tr><td>300.00</td><td>1000.00</td><td>400.00</td><td>483694126</td><td>0.00</td></tr><tr><td>600.00</td><td>1000.00</td><td>366.67</td><td>483694126</td><td>0.00</td></tr><tr><td>1300.00</td><td>1000.00</td><td>566.67</td><td>483694126</td><td>0.00</td></tr><tr><td>1600.00</td><td>1000.00</td><td>550.00</td><td>483694126</td><td>0.00</td></tr><tr><td>1900.00</td><td>1000.00</td><td>566.67</td><td>483694126</td><td>0.00</td></tr><tr><td>1700.00</td><td>500.00</td><td>533.33</td><td>483694126</td><td>0.00</td></tr><tr><td>1700.00</td><td>1500.00</td><td>516.67</td><td>483694126</td><td>0.00</td></tr></table>
+    <table><tr><th>X</th><th>Y</th><th>Z</th><th>id</th><th>nugget</th></tr><tr><td>700.00</td><td>1000.00</td><td>300.00</td><td>86902162</td><td>0.00</td></tr><tr><td>600.00</td><td>1000.00</td><td>200.00</td><td>86902162</td><td>0.00</td></tr><tr><td>500.00</td><td>1000.00</td><td>100.00</td><td>86902162</td><td>0.00</td></tr><tr><td>1000.00</td><td>1000.00</td><td>600.00</td><td>86902162</td><td>0.00</td></tr><tr><td>1100.00</td><td>1000.00</td><td>700.00</td><td>86902162</td><td>0.00</td></tr><tr><td>1000.00</td><td>50.00</td><td>350.00</td><td>175178267</td><td>0.00</td></tr><tr><td>1000.00</td><td>150.00</td><td>333.33</td><td>175178267</td><td>0.00</td></tr><tr><td>1000.00</td><td>300.00</td><td>333.33</td><td>175178267</td><td>0.00</td></tr><tr><td>1000.00</td><td>500.00</td><td>366.67</td><td>175178267</td><td>0.00</td></tr><tr><td>1000.00</td><td>1000.00</td><td>433.33</td><td>175178267</td><td>0.00</td></tr><tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr><tr><td>1100.00</td><td>1700.00</td><td>473.33</td><td>410640474</td><td>0.00</td></tr><tr><td>1100.00</td><td>1950.00</td><td>490.00</td><td>410640474</td><td>0.00</td></tr><tr><td>0.00</td><td>1000.00</td><td>433.33</td><td>410640474</td><td>0.00</td></tr><tr><td>300.00</td><td>1000.00</td><td>400.00</td><td>410640474</td><td>0.00</td></tr><tr><td>600.00</td><td>1000.00</td><td>366.67</td><td>410640474</td><td>0.00</td></tr><tr><td>1300.00</td><td>1000.00</td><td>566.67</td><td>410640474</td><td>0.00</td></tr><tr><td>1600.00</td><td>1000.00</td><td>550.00</td><td>410640474</td><td>0.00</td></tr><tr><td>1900.00</td><td>1000.00</td><td>566.67</td><td>410640474</td><td>0.00</td></tr><tr><td>1700.00</td><td>500.00</td><td>533.33</td><td>410640474</td><td>0.00</td></tr><tr><td>1700.00</td><td>1500.00</td><td>516.67</td><td>410640474</td><td>0.00</td></tr></table>
     </div>
     <br />
     <br />
 
 .. GENERATED FROM PYTHON SOURCE LINES 81-83
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.orientations
 
@@ -180,7 +180,7 @@ computational costs.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>X</th><th>Y</th><th>Z</th><th>G_x</th><th>G_y</th><th>G_z</th><th>id</th><th>nugget</th></tr><tr><td>500.00</td><td>1000.00</td><td>300.00</td><td>-0.95</td><td>-0.00</td><td>0.32</td><td>23987484</td><td>0.01</td></tr><tr><td>400.00</td><td>1000.00</td><td>420.00</td><td>0.32</td><td>0.00</td><td>0.95</td><td>249316040</td><td>0.01</td></tr><tr><td>1000.00</td><td>1000.00</td><td>300.00</td><td>0.32</td><td>0.00</td><td>0.95</td><td>375524995</td><td>0.01</td></tr></table>
+    <table><tr><th>X</th><th>Y</th><th>Z</th><th>G_x</th><th>G_y</th><th>G_z</th><th>id</th><th>nugget</th></tr><tr><td>500.00</td><td>1000.00</td><td>300.00</td><td>-0.95</td><td>-0.00</td><td>0.32</td><td>86902162</td><td>0.01</td></tr><tr><td>400.00</td><td>1000.00</td><td>420.00</td><td>0.32</td><td>0.00</td><td>0.95</td><td>209008398</td><td>0.01</td></tr><tr><td>1000.00</td><td>1000.00</td><td>300.00</td><td>0.32</td><td>0.00</td><td>0.95</td><td>325683605</td><td>0.01</td></tr></table>
     </div>
     <br />
     <br />
@@ -218,7 +218,7 @@ By default, we create a simple sequence inferred from the data:
 
 .. GENERATED FROM PYTHON SOURCE LINES 114-116
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.structural_frame
 
@@ -295,7 +295,7 @@ input data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 130-141
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.map_stack_to_surfaces(
         gempy_model=geo_model,
@@ -375,7 +375,7 @@ input data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 142-147
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_is_fault(
         frame=geo_model.structural_frame,
@@ -460,7 +460,7 @@ For instance, you can retrieve the coordinates of our modeling grid as follows:
 
 .. GENERATED FROM PYTHON SOURCE LINES 159-161
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.grid
 
@@ -473,7 +473,7 @@ For instance, you can retrieve the coordinates of our modeling grid as follows:
  .. code-block:: none
 
 
-    <gempy.core.data.grid.Grid object at 0x7f44ed57cf40>
+    <gempy.core.data.grid.Grid object at 0x7f131d34ff70>
 
 
 
@@ -491,7 +491,7 @@ attribute to be either :math:`x`, :math:`y` or :math:`z`).
 
 .. GENERATED FROM PYTHON SOURCE LINES 174-176
 
-.. code-block:: python3
+.. code-block:: Python
 
     plot = gpv.plot_2d(geo_model, show_lith=False, show_boundaries=False)
 
@@ -516,7 +516,7 @@ Toolkit <https://www.vtk.org/>`__ (VTK) to be installed.
 
 .. GENERATED FROM PYTHON SOURCE LINES 183-185
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model, image=False, plotter_type='basic')
 
@@ -534,7 +534,7 @@ Toolkit <https://www.vtk.org/>`__ (VTK) to be installed.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44ed57c9a0>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f131d39d720>
 
 
 
@@ -567,7 +567,7 @@ Display the current interpolation options
 
 .. GENERATED FROM PYTHON SOURCE LINES 208-210
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.interpolation_options
 
@@ -582,7 +582,7 @@ Display the current interpolation options
 
                     <table>
                         <tr><td colspan='2' style='text-align:center'><b>InterpolationOptions</b></td></tr>
-                        <tr><td>kernel_options</td><td>{'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f4546ac7910>, derivative_div_r=<function cubic_function_p_div_r at 0x7f4546ac79a0>, second_derivative=<function cubic_function_a at 0x7f4546ac7a30>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}</td></tr><tr><td>number_octree_levels</td><td>4</td></tr><tr><td>current_octree_level</td><td>0</td></tr><tr><td>compute_scalar_gradient</td><td>False</td></tr><tr><td>mesh_extraction</td><td>True</td></tr><tr><td>mesh_extraction_masking_options</td><td>MeshExtractionMaskingOptions.INTERSECT</td></tr><tr><td>mesh_extraction_fancy</td><td>True</td></tr><tr><td>debug</td><td>True</td></tr><tr><td>debug_water_tight</td><td>False</td></tr><tr><td>_number_octree_levels_surface</td><td>4</td></tr>
+                        <tr><td>kernel_options</td><td>{'range': 5, 'c_o': 10, 'uni_degree': 1, 'i_res': 4, 'gi_res': 2, 'number_dimensions': 3, 'kernel_function': <AvailableKernelFunctions.cubic: KernelFunction(base_function=<function cubic_function at 0x7f1333461cf0>, derivative_div_r=<function cubic_function_p_div_r at 0x7f1333461d80>, second_derivative=<function cubic_function_a at 0x7f1333461e10>, consume_sq_distance=False)>, 'compute_condition_number': False, 'kernel_solver': <Solvers.DEFAULT: 1>}</td></tr><tr><td>number_octree_levels</td><td>4</td></tr><tr><td>current_octree_level</td><td>0</td></tr><tr><td>compute_scalar_gradient</td><td>False</td></tr><tr><td>mesh_extraction</td><td>True</td></tr><tr><td>mesh_extraction_masking_options</td><td>MeshExtractionMaskingOptions.INTERSECT</td></tr><tr><td>mesh_extraction_fancy</td><td>True</td></tr><tr><td>debug</td><td>True</td></tr><tr><td>debug_water_tight</td><td>False</td></tr><tr><td>sigmoid_slope</td><td>50000</td></tr><tr><td>_number_octree_levels_surface</td><td>4</td></tr>
                     </table>
                 
     </div>
@@ -602,7 +602,7 @@ Compute the geological model and get the solutions
 
 .. GENERATED FROM PYTHON SOURCE LINES 218-221
 
-.. code-block:: python3
+.. code-block:: Python
 
     sol = gp.compute_model(geo_model)
     sol
@@ -616,7 +616,7 @@ Compute the geological model and get the solutions
  .. code-block:: none
 
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -634,7 +634,7 @@ Solutions are also stored within the :obj:`gempy.core.data.GeoModel` object, for
 
 .. GENERATED FROM PYTHON SOURCE LINES 225-227
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.solutions
 
@@ -662,7 +662,7 @@ directly. Let's take a look at our lithology block:
 
 .. GENERATED FROM PYTHON SOURCE LINES 236-238
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_model, show_data=True, cell_number="mid", direction='y')
 
@@ -680,7 +680,7 @@ directly. Let's take a look at our lithology block:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed6dd450>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f12b2c80400>
 
 
 
@@ -699,7 +699,7 @@ We can do the same with the underlying scalar-field solution:
 
 .. GENERATED FROM PYTHON SOURCE LINES 252-260
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(
         model=geo_model,
@@ -723,13 +723,13 @@ We can do the same with the underlying scalar-field solution:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed57c9a0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f1326e820b0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 261-269
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(
         model=geo_model,
@@ -753,7 +753,7 @@ We can do the same with the underlying scalar-field solution:
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f44ed6dfd60>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f131ad60970>
 
 
 
@@ -777,7 +777,7 @@ using dual contouring in the :obj:`gempy_engine`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 287-289
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_model, show_data=False, image=False, plotter_type='basic')
 
@@ -795,7 +795,7 @@ using dual contouring in the :obj:`gempy_engine`.
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f09f1000>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f1326e820b0>
 
 
 
@@ -809,7 +809,7 @@ surfaces as well as compute a high resolution geological mal.
 
 .. GENERATED FROM PYTHON SOURCE LINES 298-317
 
-.. code-block:: python3
+.. code-block:: Python
 
     gp.set_topography_from_random(
         grid=geo_model.grid,
@@ -851,7 +851,7 @@ surfaces as well as compute a high resolution geological mal.
     Active grids: ['topography']
     Setting Backend To: AvailableBackends.numpy
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f44f06aa440>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f12d5852950>
 
 
 
@@ -865,7 +865,7 @@ This is done by modifying the grid to a custom grid and recomputing.
 
 .. GENERATED FROM PYTHON SOURCE LINES 325-332
 
-.. code-block:: python3
+.. code-block:: Python
 
     x_i = np.array([[1000, 1000, 1000]])
     lith_values_at_coords: np.ndarray = gp.compute_model_at(
@@ -895,7 +895,7 @@ Therefore if we just want the value at **x\_i**:
 
 .. GENERATED FROM PYTHON SOURCE LINES 336-338
 
-.. code-block:: python3
+.. code-block:: Python
 
     geo_model.solutions.raw_arrays.custom
 
@@ -925,7 +925,7 @@ sphinx_gallery_thumbnail_number = -2
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.936 seconds)
+   **Total running time of the script:** (0 minutes 6.253 seconds)
 
 
 .. _sphx_glr_download_tutorials_ch1_fundamentals_ch1_1_basics.py:
@@ -934,16 +934,13 @@ sphinx_gallery_thumbnail_number = -2
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: ch1_1_basics.ipynb <ch1_1_basics.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: ch1_1_basics.py <ch1_1_basics.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: ch1_1_basics.ipynb <ch1_1_basics.ipynb>`
 
 
 .. only:: html

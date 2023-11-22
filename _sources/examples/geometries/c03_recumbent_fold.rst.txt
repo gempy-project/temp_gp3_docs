@@ -26,7 +26,7 @@ a Python-based, open-source library for implicit geological modeling.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-17
 
-.. code-block:: python3
+.. code-block:: Python
 
 
     # Import necessary libraries
@@ -51,7 +51,7 @@ Define the path to data
 
 .. GENERATED FROM PYTHON SOURCE LINES 20-42
 
-.. code-block:: python3
+.. code-block:: Python
 
     data_path = 'https://raw.githubusercontent.com/cgre-aachen/gempy_data/master/'
     path_to_data = data_path + "/data/input_data/jan_models/"
@@ -86,7 +86,7 @@ Define the path to data
     Surface points hash:  16bd39d19892d9a70aa41b1141f130894de6a36910f27e98ec712351f9373ce2
     Orientations hash:  1d12a150cd6f3faa81b8bbebc167ba69de4ac85fc524b771bd97ce94eb2a3e60
     Setting Backend To: AvailableBackends.numpy
-    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using octrees and passing a regular grid. The resolution of the regular grid will be overwritten
+    /home/leguark/gempy/gempy/core/data/geo_model.py:164: UserWarning: You are using refinement and passing a regular grid. The resolution of the regular grid will be overwritten
       warnings.warn(
 
 
@@ -98,7 +98,7 @@ Plot the initial geological model in the y direction
 
 .. GENERATED FROM PYTHON SOURCE LINES 44-49
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_2d(geo_data, direction=['y'], show_results=False)
 
@@ -131,13 +131,13 @@ Plot the initial geological model in the y direction
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7efc507b09d0>
+    <gempy_viewer.modules.plot_2d.visualization_2d.Plot2D object at 0x7f08f52623e0>
 
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-51
 
-.. code-block:: python3
+.. code-block:: Python
 
     gpv.plot_3d(geo_data, show_surfaces=True)
 
@@ -154,14 +154,14 @@ Plot the initial geological model in the y direction
  .. code-block:: none
 
 
-    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7efc507b3a90>
+    <gempy_viewer.modules.plot_3d.vista.GemPyToVista object at 0x7f08f548c5e0>
 
 
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.254 seconds)
+   **Total running time of the script:** (0 minutes 5.725 seconds)
 
 
 .. _sphx_glr_download_examples_geometries_c03_recumbent_fold.py:
@@ -170,16 +170,13 @@ Plot the initial geological model in the y direction
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
+      :download:`Download Jupyter notebook: c03_recumbent_fold.ipynb <c03_recumbent_fold.ipynb>`
 
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c03_recumbent_fold.py <c03_recumbent_fold.py>`
-
-    .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-      :download:`Download Jupyter notebook: c03_recumbent_fold.ipynb <c03_recumbent_fold.ipynb>`
 
 
 .. only:: html
